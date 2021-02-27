@@ -21,6 +21,13 @@ gem "seedbank", "~> 0.3.0"
 gem "strong_migrations", "~> 0.6.4"
 gem "activerecord-postgres_enum", "~> 1.6"
 
+# Authorization
+gem "cancancan", "~> 1.15.0"
+gem "devise", "~> 4.6.2"
+
+# Backend plugins
+gem "enumerize", "~> 2.3.1"
+
 # Use SCSS for stylesheets
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
