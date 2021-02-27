@@ -1,67 +1,67 @@
-*.rbc
-capybara-*.html
-.rspec
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/db/*.sqlite3-[0-9]*
-/public/system
-/coverage/
-/spec/tmp
-*.orig
-rerun.txt
-pickle-email-*.html
+/tire-service/*.rbc
+/tire-service/capybara-*.html
+/tire-service/.rspec
+/tire-service/db/*.sqlite3
+/tire-service/db/*.sqlite3-journal
+/tire-service/db/*.sqlite3-[0-9]*
+/tire-service/public/system
+/tire-service/coverage/
+/tire-service/spec/tmp
+/tire-service/*.orig
+/tire-servicererun.txt
+/tire-service/pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+/tire-service/log/*
+/tire-service/tmp/*
+!/tire-service/log/.keep
+!/tire-service/tmp/.keep
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
-config/initializers/secret_token.rb
-config/master.key
+/tire-service/config/initializers/secret_token.rb
+/tire-service/config/master.key
 
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
 
 # dotenv
 # TODO Comment out this rule if environment variables can be committed
-.env
+/tire-service/.env
 
 ## Environment normalization:
-/.bundle
-/vendor/bundle
+/tire-service/.bundle
+/tire-service/vendor/bundle
 
 # these should all be checked in to normalize the environment:
 # Gemfile.lock, .ruby-version, .ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
-.rvmrc
+/tire-service/.rvmrc
 
 # if using bower-rails ignore default bower_components path bower.json files
-/vendor/assets/bower_components
-*.bowerrc
-bower.json
+/tire-service/vendor/assets/bower_components
+/tire-service/*.bowerrc
+/tire-service/bower.json
 
 # Ignore pow environment settings
-.powenv
+/tire-service/.powenv
 
 # Ignore Byebug command history file.
-.byebug_history
+/tire-service/.byebug_history
 
 # Ignore node_modules
-node_modules/
+/tire-service/node_modules/
 
 # Ignore precompiled javascript packs
-/public/packs
-/public/packs-test
-/public/assets
+/tire-service/public/packs
+/tire-service/public/packs-test
+/tire-service/public/assets
 
 # Ignore yarn files
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
+/tire-service/yarn-error.log
+/tire-service/yarn-debug.log*
+/tire-service/.yarn-integrity
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+/tire-service/storage/*
+!/tire-service/storage/.keep
