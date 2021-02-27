@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users, class_name: "Admin::User"
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, class_name: "User", module: :devise
+  if Rails.env.development?
+    mount Rswag::Api::Engine, at: "/api/docs"
+    mount Rswag::Ui::Engine, at: "/api/docs"
+  end
 
-  root to: "home#index"
-
-  get "persons/profile", as: "user_root"
+  mount Admin::Engine, at: "/admin"
+  mount Api::Engine, at: "/api"
+  mount Front::Engine, at: "/"
 end

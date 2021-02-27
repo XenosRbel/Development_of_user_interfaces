@@ -54,11 +54,19 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "react-rails"
 gem "webpacker"
 
+# API documentation
+gem "rswag-api", "~> 2.2.0"
+gem "rswag-ui", "~> 2.2.0"
+
 group :development, :test do
   gem "rspec-rails", "~> 3.9"
+  
   # Preloader
   gem "spring", "~> 2.0", ">= 2.0.2"
   gem "spring-commands-rspec", "~> 1.0", ">= 1.0.4"
+  
+  # API documentation
+  gem "rswag-specs", "~> 2.2.0"
 end
 
 group :development do
