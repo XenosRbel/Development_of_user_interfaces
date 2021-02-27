@@ -10,5 +10,5 @@ Admin::Engine.routes.draw do
   resources :users
   resources :user_password_reset, only: %i[update edit]
 
-  root "main#index"
+  root "home#index"
 end
