@@ -1,5 +1,11 @@
 {
   "name": "tire-service",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "5.2.1",
+    "react_ujs": "^2.6.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
 }
