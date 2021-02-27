@@ -1,10 +1,14 @@
-require_relative 'boot'
+# frozen_string_literal: true
 
-require 'rails/all'
+require_relative "boot"
+
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+
+Dotenv::Railtie.load
 
 module TireService
   class Application < Rails::Application
@@ -15,5 +19,7 @@ module TireService
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    HOSTNAME = ENV["HOSTNAME"]
   end
 end
