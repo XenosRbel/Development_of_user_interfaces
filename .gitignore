@@ -1,6 +1,5 @@
 /tire-service/*.rbc
 /tire-service/capybara-*.html
-/tire-service/.rspec
 /tire-service/db/*.sqlite3
 /tire-service/db/*.sqlite3-journal
 /tire-service/db/*.sqlite3-[0-9]*
