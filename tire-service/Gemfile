@@ -39,6 +39,9 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 gem "i18n-js", "~> 3.0.0.rc13"
 gem "jquery-rails", "~> 4.1.1"
 
+# Serializators
+gem "fast_jsonapi", "~> 1.5"
+
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails", "~> 4.2"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
