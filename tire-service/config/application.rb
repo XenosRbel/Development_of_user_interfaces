@@ -40,6 +40,8 @@ module TireService
 
     config.action_dispatch.default_headers["Referrer-Policy"] = "no-referrer-when-downgrade"
 
+    config.react.addons = true
+
     HOSTNAME = ENV["HOSTNAME"]
   end
 end

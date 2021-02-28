@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    = render "layouts/admin/devise/head"
+  body
+    .large-3.large-centered.columns
+      .login-box
+        hr
+        .row
+          .large-12.columns
+            - flash.each do |kind, message|
+              div class=["alert-box", "radius", kind]
+                = message.html_safe
+            = yield

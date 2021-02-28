@@ -1,0 +1,9 @@
+= cache_if cache_enabled?, [cache_prefix, params[:code], @page, current_city.id].compact, expire_in: 5.minutes do
+  doctype html
+  html
+    head
+    body
+      #main
+        .page-wrapper
+          .page-wrapper__content
+            = yield
