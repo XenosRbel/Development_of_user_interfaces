@@ -38,6 +38,7 @@ gem "mini_racer"
 gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 gem "i18n-js", "~> 3.0.0.rc13"
 gem "jquery-rails", "~> 4.1.1"
+gem "sassc-rails"
 
 # Serializators
 gem "fast_jsonapi", "~> 1.5"
@@ -54,17 +55,23 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "react-rails"
 gem "webpacker"
 
+# Views
+gem "cocoon"
+gem "simple-navigation", "~> 4.0.3"
+gem "simple_form", "~> 4.1"
+gem "slim-rails", "~> 3.1.1"
+
 # API documentation
 gem "rswag-api", "~> 2.2.0"
 gem "rswag-ui", "~> 2.2.0"
 
 group :development, :test do
   gem "rspec-rails", "~> 3.9"
-  
+
   # Preloader
   gem "spring", "~> 2.0", ">= 2.0.2"
   gem "spring-commands-rspec", "~> 1.0", ">= 1.0.4"
-  
+
   # API documentation
   gem "rswag-specs", "~> 2.2.0"
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Front
+module Frontend
   class Engine < ::Rails::Engine
-    isolate_namespace Front
+    isolate_namespace Frontend
   end
 end

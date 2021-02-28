@@ -28,6 +28,18 @@ module TireService
       #{config.root}/lib/
     ]
 
+    config.action_controller.include_all_helpers = false
+
+    config.action_mailer.merge!(config.x.fetch(:action_mailer))
+
+    config.active_job.queue_adapter = :sidekiq
+
+    config.exceptions_app = routes
+
+    config.active_record.dump_schema_after_migration = false
+
+    config.action_dispatch.default_headers["Referrer-Policy"] = "no-referrer-when-downgrade"
+
     HOSTNAME = ENV["HOSTNAME"]
   end
 end
