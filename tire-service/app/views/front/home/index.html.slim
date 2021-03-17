@@ -1,2 +1,9 @@
 h1 Front::Home#index
 p Find me in app/views/front/home/index.html.slim
+= if user_signed_in?
+  s Здравствуйте, current_user.email
+a href=new_user_session_path = "Войти"
+s  или 
+a href=new_user_registration_path = "Зарегистрироваться" 
+p class='notice'
+p class='alert'
