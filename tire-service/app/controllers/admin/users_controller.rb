@@ -8,11 +8,16 @@ module Admin
     load_and_authorize_resource
     skip_load_resource only: :index
 
-    UPDATE_USER_PARAMS = %i[email password password_confirmation name last_name role] + [site_ids: []]
+    UPDATE_USER_PARAMS = %i[email password password_confirmation name last_name role].freeze
     USER_PARAMS = UPDATE_USER_PARAMS + %i[password password_confirmation]
 
     def index
-      respond_html_and_datatable_json_for Admin::User
+      @user = User.all.first
+
+      respond_to do |format|
+        format.html
+        format.json { render json: @user }
+      end
     end
 
     def new; end

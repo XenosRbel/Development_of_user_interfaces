@@ -2,13 +2,16 @@
 
 module Admin
   class ApplicationController < ::ApplicationController
+    include SiteHandler
+
     before_action :authenticate_user!, :set_current_user
-    before_action :set_paper_trail_whodunnit
 
     respond_to :html
     respond_to :json
 
     protect_from_forgery with: :exception
+
+    layout "admin"
 
     rescue_from CanCan::AccessDenied do
       if current_user
@@ -18,8 +21,26 @@ module Admin
       end
     end
 
+    private
+
+    def redirect_to_action_if_valid(model, action = :index)
+      if model.valid?
+        redirect_to action: action
+      else
+        respond_with model
+      end
+    end
+
+    def redirect_back_or_root(**args)
+      redirect_back(fallback_location: root_path, **args)
+    end
+
     def set_current_user
-      User.current = current_user
+      ::User.current = current_user
+    end
+
+    def current_ability
+      @current_ability ||= Abilities::Factory.build(current_user)
     end
   end
 end
