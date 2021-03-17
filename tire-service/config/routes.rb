@@ -6,9 +6,13 @@ Rails.application.routes.draw do
     get "home/index"
   end
 
+  namespace :admin do
+    get "users/index"
+  end
+
   devise_scope :users do
-    get '/login' => 'devise/sessions#new'
-    get '/logout' => 'devise/sessions#destroy'
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
