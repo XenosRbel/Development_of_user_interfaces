@@ -30,6 +30,16 @@ module TireService
 
     config.active_record.dump_schema_after_migration = false
 
+    # Bower asset paths
+    root.join("vendor", "assets", "bower_components").to_s.tap do |bower_path|
+      config.sass.load_paths << bower_path
+      config.assets.paths << bower_path
+    end
+    # Precompile Bootstrap fonts
+    config.assets.precompile << %r{bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$}
+    # Minimum Sass number precision required by bootstrap-sass
+    ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
+
     # Default value for 'Referrer-Policy' header is 'strict-origin-when-cross-origin'.
     # Change it to 'no-referrer-when-downgrade'
     config.action_dispatch.default_headers["Referrer-Policy"] = "no-referrer-when-downgrade"

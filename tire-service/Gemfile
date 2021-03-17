@@ -41,6 +41,7 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 gem "i18n-js", "~> 3.0.0.rc13"
 gem "jquery-rails", "~> 4.1.1"
 gem "sassc-rails"
+gem 'bootstrap', '~> 4.6.0'
 
 # Views
 gem "cocoon"

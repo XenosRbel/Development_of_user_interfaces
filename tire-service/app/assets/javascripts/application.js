@@ -14,3 +14,21 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require popper
+//= require bootstrap
+
+window.$ = window.jquery = window.jQuery = require('jquery');
+require('jquery-ui-bundle');
+require('jquery-ujs');
+
+require('html5shiv');
+
+require('datatables.net-zf');
+
+require('cocoon-rails');
+require('chosen-js');
+
+const componentRequireContext = require.context('./components', true);
+const ReactRailsUJS = require('react_ujs');
+
+ReactRailsUJS.useContext(componentRequireContext);
