@@ -1,22 +1,2 @@
 h1 Admin::Home#index
 p Find me in app/views/admin/home/index.html.slim
-- if notice 
-  .notice
-    p notice
-- if alert 
-  .aler 
-    p alert 
-
-.container-fluid
-  .row
-    .col.navbar-text.pull-right
-      - if user_signed_in?
-        .alert.alert-success role="alert"
-        p Здравствуйте, current_user.email
-      - else 
-      nav aria-label="breadcrumb"
-        ol.breadcrumb
-          li.breadcrumb-item
-              = link_to "Sign up", new_user_registration_path, class:  'navbar-link'
-          li.breadcrumb-item
-            = link_to "Login", new_user_session_path, class:  'navbar-link'

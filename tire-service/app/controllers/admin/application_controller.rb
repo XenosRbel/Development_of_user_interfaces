@@ -3,6 +3,7 @@
 module Admin
   class ApplicationController < ::ApplicationController
     include SiteHandler
+    include ApplicationHelper
 
     before_action :authenticate_user!, :set_current_user
 
@@ -36,7 +37,7 @@ module Admin
     end
 
     def set_current_user
-      ::User.current = current_user
+      User.current = current_user
     end
 
     def current_ability

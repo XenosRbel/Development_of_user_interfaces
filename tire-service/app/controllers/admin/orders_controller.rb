@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
-class Admin::OrdersController < ApplicationController
-  def index; end
+module Admin
+  class OrdersController < ApplicationController
+    def index; end
+  end
 end

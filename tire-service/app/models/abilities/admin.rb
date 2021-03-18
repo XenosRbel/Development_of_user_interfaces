@@ -2,10 +2,13 @@
 
 module Abilities
   class Admin < Ability # rubocop:disable Metrics/ClassLength
+    MODELS = [
+      Order,
+      User
+    ].freeze
+
     PERMISSIONS = {
-      manage: [
-        Order
-      ].freeze
+      manage: MODELS
     }.freeze
 
     def initialize(user)

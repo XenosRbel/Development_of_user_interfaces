@@ -4,6 +4,10 @@ require_relative "boot"
 
 require "rails/all"
 
+require "./lib/core/boolean_method"
+require "./lib/core/config_reader"
+require "./lib/core/multiple_cache"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -17,6 +21,9 @@ module TireService
     config.load_defaults 5.2
 
     config.time_zone = "Minsk"
+
+    config.active_record.schema_format = :ruby
+
     config.i18n.available_locales = %i[ru en]
     config.i18n.default_locale = :ru
 

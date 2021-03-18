@@ -30,6 +30,10 @@ class User < ApplicationRecord
     end
   end
 
+  def full_name
+    "#{first_name}\t#{last_name}\t#{father_name}"
+  end
+
   def role_available?
     AVAILABLE_ROLES.include?(role)
   end

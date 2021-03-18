@@ -1,0 +1,13 @@
+ru:
+  simple_form:
+    "yes": "Да"
+    "no": "Нет"
+    required:
+      text: "Обязательное поле"
+      mark: "*"
+    error_notification:
+      default_message: "Ошибки:"
+    labels:
+      defaults:
+        sort: "Сортировка"
+        code: "Символьный код"

@@ -7,6 +7,15 @@ ruby "2.6.3"
 gem "rails", "~> 5.2.4", ">= 5.2.4.5"
 gem "rack", "~> 2.2.2"
 
+# Observability
+gem "yabeda", "~> 0.8.0"
+gem "yabeda-rails", "~> 0.7.0"
+gem "yabeda-prometheus-mmap", "~> 0.1.1"
+gem "yabeda-puma-plugin", "~> 0.4.0"
+
+# Lograge
+gem "lograge", "~> 0.11.2"
+
 # Web Server
 gem "puma", "~> 3.11"
 gem "paranoia", "~> 2.4", ">= 2.4.2"
@@ -41,7 +50,8 @@ gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.5"
 gem "i18n-js", "~> 3.0.0.rc13"
 gem "jquery-rails", "~> 4.1.1"
 gem "sassc-rails"
-gem 'bootstrap', '~> 4.6.0'
+gem "bootstrap", "~> 4.6.0"
+gem "jquery-ui-rails"
 
 # Views
 gem "cocoon"
