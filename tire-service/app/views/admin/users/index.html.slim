@@ -1,16 +1,31 @@
-p
-  = @user.to_json
-nav aria-label="breadcrumb"
-  ol class="breadcrumb"
-    li class="breadcrumb-item"
-      = link_to "Edit profile", edit_user_registration_path, class: "navbar-link"
-    li class="breadcrumb-item"
-      = link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-link"
-    li class="breadcrumb-item"
-      = link_to "Edit profile", edit_user_registration_path, class: "navbar-link"
-    li class="breadcrumb-item"
-      = link_to "Logout", destroy_user_session_path, method: :delete, :class => "navbar-link"
-    li class="breadcrumb-item"
-      = link_to "Profile", '#persons_profile_path', class: "navbar-link"
-    li class="breadcrumb-item"
-      = link_to "Home", root_path, class: "navbar-link"
+table.table
+  thead.thead-dark
+    tr
+      th scope="col" #
+      th scope="col"= I18n.t('activerecord.attributes.user.first_name')
+      th scope="col"= I18n.t('activerecord.attributes.user.last_name')
+      th scope="col"= I18n.t('activerecord.attributes.user.father_name')
+      th scope="col"= I18n.t('activerecord.attributes.user.phone_number')
+      th scope="col"= I18n.t('activerecord.attributes.user.role')
+      th scope="col"= I18n.t('activerecord.attributes.user.voucher')
+      th scope="col"= I18n.t('cocoon.defaults.actions')
+  tbody
+    - @users.each do |user|
+      tr
+        th
+          = user.id
+        th
+          = user.first_name
+        th
+          = user.last_name
+        th
+          = user.father_name
+        th
+          = user.phone_number
+        th
+          = I18n.t("roles.#{user.role}")
+        th
+          = user.voucher
+        th
+          = render "actions", model: user
+

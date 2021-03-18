@@ -1,22 +1,30 @@
 # frozen_string_literal: true
 
 module Admin
-  class UsersController < ApplicationController
+  class UsersController < Devise::RegistrationsController
     include SiteHandler
     not_add_site_to_params
 
     load_and_authorize_resource
     skip_load_resource only: :index
 
-    UPDATE_USER_PARAMS = %i[email password password_confirmation name last_name role].freeze
+    UPDATE_USER_PARAMS = %i[email
+                            password
+                            password_confirmation
+                            first_name
+                            last_name
+                            father_name
+                            phone_number
+                            voucher
+                            role].freeze
     USER_PARAMS = UPDATE_USER_PARAMS + %i[password password_confirmation]
 
     def index
-      @user = User.all.first
+      @users = User.all
 
       respond_to do |format|
         format.html
-        format.json { render json: @user }
+        format.json { render json: @users }
       end
     end
 

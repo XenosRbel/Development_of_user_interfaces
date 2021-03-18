@@ -1,6 +1,8 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
   .collapse.navbar-collapse
     ul.navbar-nav.mr-auto
+      li.nav-item
+        = link_to I18n.t("paths.home"), root_path, class: "nav-link"
       - navigation.each do |item|
         li.nav-item
           = link_to I18n.t("paths.#{item.fetch(:lable, "").downcase}"), 
@@ -15,5 +17,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
                                 id: "navbarDropdown",
                                 class: "nav-link dropdown-toggle mr-sm-2"
           .dropdown-menu aria-labelledby="navbarDropdown"
-            = link_to I18n.t('paths.exit'), exit_path, class: "dropdown-item"
-            = link_to I18n.t('paths.edit'), edit_user_path(id: current_user.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.edit'), edit_user_path(id: current_user.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.show'), user_path(id: current_user.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.exit'), exit_path, class: "dropdown-item"
