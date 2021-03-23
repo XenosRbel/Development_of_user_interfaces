@@ -100,7 +100,7 @@ GEM
       railties (>= 4.2.0)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
-    ffaker (2.13.0)
+    ffaker (2.17.0)
     ffi (1.15.0)
     font-awesome-rails (4.7.0.7)
       railties (>= 3.2, < 7)
@@ -156,6 +156,7 @@ GEM
     paranoia (2.4.3)
       activerecord (>= 4.0, < 6.2)
     pg (0.18.4)
+    pg_inheritance (0.1.2)
     pg_search (1.0.6)
       activerecord (>= 3.1)
       activesupport (>= 3.1)
@@ -345,7 +346,7 @@ DEPENDENCIES
   enumerize (~> 2.3.1)
   factory_bot_rails (~> 5.1.1)
   fast_jsonapi (~> 1.5)
-  ffaker (~> 2.13.0)
+  ffaker (~> 2.17.0)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
   i18n-js (~> 3.0.0.rc13)
   jbuilder (~> 2.5)
@@ -357,6 +358,7 @@ DEPENDENCIES
   mini_racer
   paranoia (~> 2.4, >= 2.4.2)
   pg (~> 0.18.2)
+  pg_inheritance
   pg_search (~> 1.0.3)
   pry-byebug
   pry-doc

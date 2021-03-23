@@ -1,6 +1,7 @@
 class CreateAdminAdministrators < ActiveRecord::Migration[5.2]
   def change
     create_table :admin_administrators do |t|
+      t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -33,6 +34,7 @@ class CreateAdminAdministrators < ActiveRecord::Migration[5.2]
     end
 
     add_index :admin_administrators, :reset_password_token, unique: true
+    add_index :admin_administrators, :email, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end
