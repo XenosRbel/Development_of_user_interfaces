@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 module Admin
-  class Customer < ApplicationRecord
+  class Customer < User
   end
 end
