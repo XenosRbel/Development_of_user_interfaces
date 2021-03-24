@@ -1,15 +1,14 @@
-- new_user = user.new_record?
-= simple_form_for user do |f|
+- new_user = @user.new_record?
+= simple_form_for @user do |f|
   .row
     .medium-4.columns
-      = f.input :email
-      = f.input :name
+      = f.input :first_name
       = f.input :last_name
+      = f.input :father_name
   .row
     .medium-12.columns.form__buttons
       = f.button :submit, t("helpers.submit.submit"), class: "button tiny submit-button"
       - if !new_user
         = link_to t("activerecord.attributes.user.password_reset"),
-                  edit_user_password_reset_path(user),
+                  "edit_password_path(@user)",
                   class: "button tiny"
-      = f.button :delete, t("helpers.destroy.delete"), with_icon: true

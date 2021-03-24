@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module Admin
-  class OrdersController < ApplicationController
-    datatable model: Order
+  class ServicesController < ApplicationController
+    datatable model: Service
 
     def index
       super

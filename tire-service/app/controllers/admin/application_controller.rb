@@ -4,6 +4,7 @@ module Admin
   class ApplicationController < ::ApplicationController
     include SiteHandler
     include ApplicationHelper
+    include Datatable
 
     before_action :authenticate_administrator!, :set_current_administrator
 
@@ -17,6 +18,12 @@ module Admin
     rescue_from CanCan::AccessDenied do |exception|
       flash[:error] = exception.message
       redirect_to root_path
+    end
+
+    def index
+      @model_attributes = model_attributes
+      @model = model
+      @model_items = @model.all
     end
 
     private

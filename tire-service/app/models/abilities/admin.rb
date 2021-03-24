@@ -4,6 +4,11 @@ module Abilities
   class Admin < Ability # rubocop:disable Metrics/ClassLength
     MODELS = [
       ::Admin::Order,
+      ::Admin::Customer,
+      ::Admin::Administrator,
+      ::Admin::Discount,
+      ::Admin::Master,
+      ::Admin::Service,
       ::User
     ].freeze
 

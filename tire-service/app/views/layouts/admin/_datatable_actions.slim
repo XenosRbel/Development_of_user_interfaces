@@ -1,0 +1,4 @@
+.btn-group
+  = button_to I18n.t('cocoon.defaults.show'), model, method: :get, class: "btn btn-primary"
+  = button_to I18n.t('cocoon.defaults.edit'), edit_path_for(model), method: :get, class: "btn btn-warning"
+  = button_to I18n.t('cocoon.defaults.remove'), model, method: :delete, class: "btn btn-danger"

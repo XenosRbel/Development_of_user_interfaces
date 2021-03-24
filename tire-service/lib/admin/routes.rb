@@ -8,9 +8,13 @@ Admin::Engine.routes.draw do
     resources :users
   end
 
-  resources :administators
+  resources :administrators
+  resources :customers
   resources :users
   resources :orders
+  resources :discounts
+  resources :masters
+  resources :services
 
   root to: "home#index"
 end

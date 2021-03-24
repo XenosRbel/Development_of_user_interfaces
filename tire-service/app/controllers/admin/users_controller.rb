@@ -14,6 +14,8 @@ module Admin
                             phone_number].freeze
     USER_PARAMS = UPDATE_USER_PARAMS
 
+    datatable model: ::User
+
     def index
       @users = User.all
 

@@ -6,22 +6,56 @@ ru:
         few: "Пользователи"
         many: "Пользователи"
         other: "Пользователи"
+    base_attributes: &base_attributes
+      id: "#"
+      created_at: "Дата создания"
+      updated_at: "Дата изменения"
     attributes:
-      user:
-        email: "Email"
-        password: "Пароль"
-        password_confirmation: "Подтверждение пароля"
+      user: &user
+        <<: *base_attributes
         first_name: "Имя"
         last_name: "Фамилия"
         father_name: "Отчество"
         phone_number: "Номер телефона"
+      customer: 
+        <<: *base_attributes
+        <<: *user
+      order:
+        <<: *base_attributes
+        start_execution_at: "Дата начала выполнения"
+        end_execution_at: "Дата завершения выполнения"
+      discount:
+        <<: *base_attributes
+        percent: "% скидки"
+        description: "Описание"
+        title: "Заголовок"
+        start_date_at: "Действует с"
+        end_date_at: "Действует до"
+      service:
+        <<: *base_attributes
+        price: "Цена (BYN)"
+        description: "Описание"
+        title: "Заголовок"
+      master:
+        <<: *base_attributes
+        <<: *user
+        specialization: "Специализация"
+        work_experience: "Суммарный опыт работы"
+      administrator: 
+        <<: *base_attributes
+        <<: *user
+        email: "Email"
         voucher: "Ваучер"
         role: "Роль"
-        password_reset: "Сменить Пароль"
   paths:
     home: "Домой"
     orders: "Заказы"
+    discounts: "Дискоунт"
+    services: "Услуги"
+    masters: "Мастера"
     users: "Пользователи"
+    customers: "Заказчики"
+    administrators: "Администраторы"
   roles:
     admin: "Администратор"
   cocoon:
