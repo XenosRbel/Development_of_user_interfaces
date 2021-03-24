@@ -5,7 +5,7 @@ module Admin
     include SiteHandler
     include ApplicationHelper
 
-    before_action :authenticate_user!, :set_current_user
+    before_action :authenticate_administrator!, :set_current_administrator
 
     respond_to :html
     respond_to :json
@@ -14,12 +14,9 @@ module Admin
 
     layout "admin"
 
-    rescue_from CanCan::AccessDenied do
-      if current_user
-        redirect_to root_path
-      else
-        head status: :unauthorized
-      end
+    rescue_from CanCan::AccessDenied do |exception|
+      flash[:error] = exception.message
+      redirect_to root_path
     end
 
     private
@@ -36,12 +33,12 @@ module Admin
       redirect_back(fallback_location: root_path, **args)
     end
 
-    def set_current_user
-      User.current = current_user
+    def set_current_administrator
+      Admin::Administrator.current = current_administrator
     end
 
     def current_ability
-      @current_ability ||= Abilities::Factory.build(current_user)
+      @current_ability ||= Abilities::Factory.build(current_administrator)
     end
   end
 end

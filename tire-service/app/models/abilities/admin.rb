@@ -3,8 +3,8 @@
 module Abilities
   class Admin < Ability # rubocop:disable Metrics/ClassLength
     MODELS = [
-      Order,
-      User
+      ::Admin::Order,
+      ::User
     ].freeze
 
     PERMISSIONS = {

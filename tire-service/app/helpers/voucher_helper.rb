@@ -4,7 +4,7 @@ module VoucherHelper
   VOUCHER_LENGTH = 12
 
   def create_voucher
-    return if self.voucher.present?
+    return if voucher.present?
 
     self.voucher = genarate_voucher(VOUCHER_LENGTH)
   end

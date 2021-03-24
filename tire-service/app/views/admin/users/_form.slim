@@ -3,12 +3,8 @@
   .row
     .medium-4.columns
       = f.input :email
-      - if new_user
-        = f.input :password
-        = f.input :password_confirmation
       = f.input :name
       = f.input :last_name
-      = f.input :role
   .row
     .medium-12.columns.form__buttons
       = f.button :submit, t("helpers.submit.submit"), class: "button tiny submit-button"

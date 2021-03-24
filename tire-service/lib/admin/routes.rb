@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 Admin::Engine.routes.draw do
-  devise_for :users, class_name: "User", module: :devise
-  devise_scope :user do
+  devise_for :administrators, class_name: "Admin::Administrator"
+
+  devise_scope :administrator do
     get "/exit" => "/devise/sessions#destroy"
-    get "/login" => "/devise/sessions#new"
-    post "/login" => "/devise/sessions#new"
+    resources :users
   end
 
+  resources :administators
   resources :users
   resources :orders
 

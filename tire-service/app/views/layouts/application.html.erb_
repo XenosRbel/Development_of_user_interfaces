@@ -23,7 +23,7 @@
         <div class="col navbar-text pull-right">
           <% if user_signed_in? %>
             <div class="alert alert-success" role="alert">
-              Здравствуйте, <%= current_user.email %>
+              Здравствуйте, <%= current_administrator.email %>
             </div>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">

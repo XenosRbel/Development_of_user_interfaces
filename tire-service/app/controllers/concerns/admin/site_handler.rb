@@ -20,10 +20,10 @@ module Admin
       private
 
       def fetch_site(site_id, _)
-        return if current_user.blank? || site_id.blank?
+        return if current_administrator.blank? || site_id.blank?
         raise ActiveRecord::RecordNotFound unless Site.exists? site_id
 
-        site = current_user.sites.find_by id: site_id
+        site = current_administrator.sites.find_by id: site_id
         raise CanCan::AccessDenied if site.blank?
 
         site

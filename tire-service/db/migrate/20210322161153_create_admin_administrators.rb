@@ -1,6 +1,6 @@
 class CreateAdminAdministrators < ActiveRecord::Migration[5.2]
   def change
-    create_table :admin_administrators do |t|
+    create_table :admin_administrators, inherits: :users do |t|
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 

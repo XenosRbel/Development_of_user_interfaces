@@ -6,8 +6,6 @@ table.table
       th scope="col"= I18n.t('activerecord.attributes.user.last_name')
       th scope="col"= I18n.t('activerecord.attributes.user.father_name')
       th scope="col"= I18n.t('activerecord.attributes.user.phone_number')
-      th scope="col"= I18n.t('activerecord.attributes.user.role')
-      th scope="col"= I18n.t('activerecord.attributes.user.voucher')
       th scope="col"= I18n.t('cocoon.defaults.actions')
   tbody
     - @users.each do |user|
@@ -22,10 +20,6 @@ table.table
           = user.father_name
         th
           = user.phone_number
-        th
-          = I18n.t("roles.#{user.role}")
-        th
-          = user.voucher
         th
           = render "actions", model: user
 

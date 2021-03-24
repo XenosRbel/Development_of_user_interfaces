@@ -10,13 +10,13 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     .my-2.my-lg-0
       ul.navbar-nav.mr-auto
         li.nav-item.dropdown
-          =link_to current_user.full_name, 
+          =link_to current_administrator.full_name, 
                                 "#", 
                                 data: { toggle: "dropdown" },
                                 aria: { haspopup: "true", expanded: "false" },
                                 id: "navbarDropdown",
                                 class: "nav-link dropdown-toggle mr-sm-2"
           .dropdown-menu aria-labelledby="navbarDropdown"
-            = link_to I18n.t('cocoon.defaults.edit'), edit_user_path(id: current_user.id), class: "dropdown-item"
-            = link_to I18n.t('cocoon.defaults.show'), user_path(id: current_user.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.edit'), edit_user_path(id: current_administrator.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.show'), user_path(id: current_administrator.id), class: "dropdown-item"
             = link_to I18n.t('cocoon.defaults.exit'), exit_path, class: "dropdown-item"

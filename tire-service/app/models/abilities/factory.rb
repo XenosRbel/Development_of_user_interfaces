@@ -3,7 +3,7 @@
 module Abilities
   class Factory
     class << self
-      def build(user = ::User.new)
+      def build(user = ::Admin::Administrator.new)
         return Ability.new(user) unless user.role_available?
 
         ability_class_for(user).new(user)
