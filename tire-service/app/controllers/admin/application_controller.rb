@@ -47,5 +47,17 @@ module Admin
     def current_ability
       @current_ability ||= Abilities::Factory.build(current_administrator)
     end
+
+    def model_params
+      params.require(model_symbolize).permit(*read_constant(:MODEL_PARAMS))
+    end
+
+    def update_model_params
+      params.require(model_symbolize).permit(*read_constant(:UPDATE_MODEL_PARAMS))
+    end
+
+    def model_symbolize
+      model.to_s.downcase.split("::").last.to_sym
+    end
   end
 end

@@ -19,14 +19,6 @@ module Admin
                              start_execution_at].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
-    def index
-      super
-    end
-
-    def edit; end
-
-    def new; end
-
     def create
       @order = Order.new(model_params)
       redirect_to @order if @order.save
@@ -43,14 +35,6 @@ module Admin
     end
 
     private
-
-    def model_params
-      params.require(:order).permit(*MODEL_PARAMS)
-    end
-
-    def update_model_params
-      params.require(:order).permit(*UPDATE_MODEL_PARAMS)
-    end
 
     def select_option_collection
       @master_select_options = Master.all.map { |item| [item.full_name, item.id, { data: { type: item.id } }] }

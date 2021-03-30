@@ -1,0 +1,21 @@
+.card.text-center
+  .card-body
+    h5.card-title
+      = @customer.id
+  ul.list-group.list-group-flush
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.customer.last_name")
+      |:&nbsp;
+      span = @customer.last_name      
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.customer.first_name")
+      |:&nbsp;
+      span = @customer.first_name
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.customer.father_name")
+      |:&nbsp;
+      span = @customer.father_name
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.customer.phone_number")
+      |:&nbsp;
+      span = @customer.phone_number
