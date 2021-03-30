@@ -31,7 +31,6 @@ module Admin
 
     def create
       @user.save
-      respond_with @user, location: users_path
     end
 
     def update
