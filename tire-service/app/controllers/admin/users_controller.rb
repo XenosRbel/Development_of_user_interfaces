@@ -14,7 +14,7 @@ module Admin
                             phone_number].freeze
     USER_PARAMS = UPDATE_USER_PARAMS
 
-    datatable model: ::User
+    datatable model: ::User, exclude_attributes: %w[created_at updated_at]
 
     def index
       @users = User.all

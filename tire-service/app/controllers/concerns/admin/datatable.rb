@@ -5,10 +5,11 @@ module Admin
     extend ActiveSupport::Concern
 
     class_methods do
-      attr_reader :model
+      attr_reader :model, :exclude_attributes
 
-      def datatable(model: nil)
+      def datatable(model: nil, exclude_attributes: [])
         @model = model
+        @exclude_attributes = exclude_attributes
       end
     end
 
@@ -23,7 +24,7 @@ module Admin
       end
 
       def model_attributes
-        self.class.model.column_names
+        self.class.model.column_names - self.class.exclude_attributes
       end
 
       def model

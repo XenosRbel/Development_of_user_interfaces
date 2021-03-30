@@ -2,7 +2,7 @@
 
 module Admin
   class OrdersController < ApplicationController
-    datatable model: Order
+    datatable model: Order, exclude_attributes: %w[created_at updated_at]
 
     def index
       super

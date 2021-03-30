@@ -2,7 +2,7 @@
 
 module Admin
   class CustomersController < ApplicationController
-    datatable model: Customer
+    datatable model: Customer, exclude_attributes: %w[created_at updated_at]
 
     def index
       super
