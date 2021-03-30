@@ -53,6 +53,7 @@ gem "jquery-rails", "~> 4.1.1"
 gem "sassc-rails"
 gem "bootstrap", "~> 4.6.0"
 gem "jquery-ui-rails"
+gem "bootstrap_icons_rails"
 
 # Views
 gem "cocoon"

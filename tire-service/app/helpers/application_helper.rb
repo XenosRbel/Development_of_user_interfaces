@@ -8,4 +8,8 @@ module ApplicationHelper
   def edit_path_for(model)
     "#{path_for(model)}/edit"
   end
+
+  def new_path_for(model)
+    public_send("new_#{model.name.split('::').last.downcase}_path")
+  end
 end

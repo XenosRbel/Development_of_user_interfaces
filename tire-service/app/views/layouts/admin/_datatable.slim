@@ -1,3 +1,9 @@
+.bg-light.clearfix.mb-3
+  .float-right
+    = link_to(bi_icon("plus-square", text: t("cocoon.defaults.add")), 
+                                     new_path_for(@model), 
+                                     class: "btn btn-secondary")
+          
 table.table
   thead.thead-dark
     tr

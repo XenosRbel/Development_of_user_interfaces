@@ -2,6 +2,8 @@
 
 module Admin
   module ApplicationHelper
+    include BootstrapIcons::Rails::BiIconHelper
+
     def navigation
       @navigation ||= Admin::NavigationBuilder.new.call
     end
