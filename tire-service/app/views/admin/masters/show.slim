@@ -1,0 +1,31 @@
+.card.text-center
+  .card-body
+    h5.card-
+      span = I18n.t("activerecord.attributes.master.id")
+      |&nbsp;
+      span = @master.id
+  ul.list-group.list-group-flush
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.master.last_name")
+      |:&nbsp;
+      span = @master.last_name      
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.master.first_name")
+      |:&nbsp;
+      span = @master.first_name
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.master.father_name")
+      |:&nbsp;
+      span = @master.father_name
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.master.phone_number")
+      |:&nbsp;
+      span = @master.phone_number
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.master.specialization")
+      |:&nbsp;
+      span = @master.specialization
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.master.work_experience")
+      |:&nbsp;
+      span = @master.work_experience
