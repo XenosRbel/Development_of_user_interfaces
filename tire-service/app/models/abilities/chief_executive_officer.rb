@@ -8,12 +8,11 @@ module Abilities
       ::Admin::Administrator,
       ::Admin::Discount,
       ::Admin::Master,
-      ::Admin::Service,
-      ::User
+      ::Admin::Service
     ].freeze
 
     PERMISSIONS = {
-      manage: MODELS
+      manage: MODELS + [::User]
     }.freeze
   end
 end

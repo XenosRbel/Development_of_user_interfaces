@@ -8,7 +8,7 @@
     thead.thead-dark
       tr
       - @model_attributes.each do |attribute|
-        th scope="col"= I18n.t("activerecord.attributes.#{@model.name.split('::').last.downcase}.#{attribute}")
+        th scope="col"= I18n.t("activerecord.attributes.admin/#{@model.name.split('::').last.downcase}.#{attribute}")
       th scope="col"= I18n.t('cocoon.defaults.actions')
     tbody
       - @model_items.each do |item|

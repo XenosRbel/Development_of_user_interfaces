@@ -12,6 +12,11 @@ module Admin
                              price].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
+    def create
+      @service = model.create(model_params)
+      respond_with @service, location: services_path
+    end
+
     def update
       @service.update update_model_params
       respond_with @service, location: service_path

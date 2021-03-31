@@ -8,6 +8,7 @@ module Admin
     belongs_to :discount, foreign_key: :admin_discount_id, class_name: "Admin::Discount"
     belongs_to :customer, foreign_key: :admin_customer_id, class_name: "Admin::Customer"
 
+    validates_presence_of :services
     validates_datetime :end_execution_at, after: :start_execution_at, allow_blank: false
   end
 end

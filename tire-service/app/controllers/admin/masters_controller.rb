@@ -15,6 +15,11 @@ module Admin
                              work_experience].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
+    def create
+      @master = model.create(model_params)
+      respond_with @master, location: masters_path
+    end
+
     def update
       @master.update update_model_params
       respond_with @master, location: master_path

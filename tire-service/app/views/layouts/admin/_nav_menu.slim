@@ -17,6 +17,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
                                 id: "navbarDropdown",
                                 class: "nav-link dropdown-toggle mr-sm-2"
           .dropdown-menu aria-labelledby="navbarDropdown"
-            = link_to I18n.t('cocoon.defaults.edit'), edit_user_path(id: current_administrator.id), class: "dropdown-item"
-            = link_to I18n.t('cocoon.defaults.show'), user_path(id: current_administrator.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.edit'), edit_administrator_path(id: current_administrator.id), class: "dropdown-item"
+            = link_to I18n.t('cocoon.defaults.show'), administrator_path(id: current_administrator.id), class: "dropdown-item"
             = link_to I18n.t('cocoon.defaults.exit'), exit_path, class: "dropdown-item"

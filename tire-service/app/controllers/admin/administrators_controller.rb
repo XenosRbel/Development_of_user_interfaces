@@ -21,6 +21,11 @@ module Admin
                              role].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
+    def create
+      @administrator = model.create(model_params)
+      respond_with @administrator, location: administrators_path
+    end
+
     def update
       @administrator.update update_model_params
       respond_with @administrator, location: administrator_path
@@ -35,7 +40,7 @@ module Admin
 
     def select_option_collection
       @role_select_options = Administrator::AVAILABLE_ROLES.map do |role|
-        [I18n.t("activerecord.attributes.administrator.roles.#{role}"), role, { data: { type: role } }]
+        [I18n.t("activerecord.attributes.admin/administrator.roles.#{role}"), role, { data: { type: role } }]
       end
     end
   end

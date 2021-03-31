@@ -1,5 +1,17 @@
 ru:
   activerecord: &activerecord
+    errors:
+      models:
+        admin/order:
+          attributes:
+            master:
+              required: "Заказ без мастера не может существовать!"
+            customer:
+              required: "Заказ без клиента не может существовать!"
+            discount:
+              required: "Заказ без скидки не может существовать!"
+            end_execution_at:
+              after: "Дата завершения выполнения рабо, ты не может быть меньше даты начала выполнения"
     models:
       user:
         one: "Пользователь"
@@ -17,34 +29,35 @@ ru:
         last_name: "Фамилия"
         father_name: "Отчество"
         phone_number: "Номер телефона"
-      customer: 
+      admin/customer: 
         <<: *base_attributes
         <<: *user
-      order:
+      admin/order:
         <<: *base_attributes
         start_execution_at: "Дата начала выполнения"
         end_execution_at: "Дата завершения выполнения"
         customer: "Заказчик"
         master: "Мастер"
         discount: "Дискоунт"
-      discount:
+        services: "Услуги"
+      admin/discount:
         <<: *base_attributes
         percent: "% скидки"
         description: "Описание"
         title: "Заголовок"
         start_date_at: "Действует с"
         end_date_at: "Действует до"
-      service:
+      admin/service:
         <<: *base_attributes
         price: "Цена (BYN)"
         description: "Описание"
         title: "Заголовок"
-      master:
+      admin/master:
         <<: *base_attributes
         <<: *user
         specialization: "Специализация"
         work_experience: "Суммарный опыт работы"
-      administrator: 
+      admin/administrator: 
         <<: *base_attributes
         <<: *user
         email: "Email"
@@ -64,6 +77,15 @@ ru:
     users: "Пользователи"
     customers: "Заказчики"
     administrators: "Администраторы"
+  actions:
+    admin/home: "Главная"
+    admin/orders: "Заказы"
+    admin/discounts: "Дискоунт"
+    admin/services: "Услуги"
+    admin/masters: "Мастера"
+    users: "Пользователи"
+    admin/customers: "Заказчики"
+    admin/administrators: "Администраторы"
   roles:
     admin: "Администратор"
   cocoon:

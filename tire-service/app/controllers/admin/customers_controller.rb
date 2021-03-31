@@ -14,8 +14,8 @@ module Admin
     datatable model: Customer, exclude_attributes: %w[created_at updated_at]
 
     def create
-      @customer = model.new(model_params)
-      redirect_to @customer if @customer.save
+      @customer = model.create(model_params)
+      respond_with @customer, location: customers_path
     end
 
     def update

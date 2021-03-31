@@ -14,6 +14,11 @@ module Admin
                              percent].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
+    def create
+      @discount = model.create(model_params)
+      respond_with @discount, location: discounts_path
+    end
+
     def update
       @discount.update update_model_params
       respond_with @discount, location: discount_path

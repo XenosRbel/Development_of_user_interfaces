@@ -1,25 +1,27 @@
 .card.text-center
   .card-body
     h5.card-title
-      = @order.id
+      span = I18n.t("activerecord.attributes.admin/order.id")
+      |&nbsp;
+      span = @order.id
   ul.list-group.list-group-flush
     li.list-group-item
-      span = I18n.t("activerecord.attributes.order.start_execution_at")
+      span = I18n.t("activerecord.attributes.admin/order.start_execution_at")
       |:&nbsp;
       span = @order.start_execution_at      
     li.list-group-item
-      span = I18n.t("activerecord.attributes.order.end_execution_at")
+      span = I18n.t("activerecord.attributes.admin/order.end_execution_at")
       |:&nbsp;
       span = @order.end_execution_at
     li.list-group-item
-      span = I18n.t("activerecord.attributes.order.master")
+      span = I18n.t("activerecord.attributes.admin/order.master")
       |:&nbsp;
       span = link_to @order.master.full_name, @order.master 
     li.list-group-item
-      span = I18n.t("activerecord.attributes.order.customer")
+      span = I18n.t("activerecord.attributes.admin/order.customer")
       |:&nbsp;
       span = link_to @order.customer.full_name, @order.customer 
     li.list-group-item
-      span = I18n.t("activerecord.attributes.order.discount")
+      span = I18n.t("activerecord.attributes.admin/order.discount")
       |:&nbsp;
       span = link_to @order.discount.title, @order.discount 

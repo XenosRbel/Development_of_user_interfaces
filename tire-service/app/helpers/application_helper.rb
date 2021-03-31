@@ -12,4 +12,8 @@ module ApplicationHelper
   def new_path_for(model)
     public_send("new_#{model.name.split('::').last.downcase}_path")
   end
+
+  def title
+    I18n.t("actions.#{params[:controller]}")
+  end
 end
