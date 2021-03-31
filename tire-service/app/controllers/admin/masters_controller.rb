@@ -6,8 +6,23 @@ module Admin
     skip_load_resource only: :index
 
     datatable model: Master, exclude_attributes: %w[created_at updated_at]
-    def index
-      super
+
+    UPDATE_MODEL_PARAMS = %i[last_name
+                             first_name
+                             father_name
+                             phone_number
+                             specialization
+                             work_experience].freeze
+    MODEL_PARAMS = UPDATE_MODEL_PARAMS
+
+    def update
+      @master.update update_model_params
+      respond_with @master, location: master_path
+    end
+
+    def destroy
+      @master.destroy
+      redirect_to masters_path
     end
   end
 end

@@ -7,8 +7,19 @@ module Admin
 
     datatable model: Service, exclude_attributes: %w[created_at updated_at]
 
-    def index
-      super
+    UPDATE_MODEL_PARAMS = %i[title
+                             description
+                             price].freeze
+    MODEL_PARAMS = UPDATE_MODEL_PARAMS
+
+    def update
+      @service.update update_model_params
+      respond_with @service, location: service_path
+    end
+
+    def destroy
+      @service.destroy
+      redirect_to services_path
     end
   end
 end

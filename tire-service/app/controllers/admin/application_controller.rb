@@ -26,6 +26,11 @@ module Admin
       @model_items = @model.all
     end
 
+    def create
+      @model = model.new(model_params)
+      redirect_to @model if @model.save
+    end
+
     private
 
     def redirect_to_action_if_valid(model, action = :index)

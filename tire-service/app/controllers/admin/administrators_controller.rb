@@ -12,8 +12,23 @@ module Admin
                                                            remember_created_at
                                                            created_at
                                                            updated_at]
-    def index
-      super
+
+    UPDATE_MODEL_PARAMS = %i[last_name
+                             first_name
+                             father_name
+                             phone_number
+                             email
+                             role].freeze
+    MODEL_PARAMS = UPDATE_MODEL_PARAMS
+
+    def update
+      @administrator.update update_model_params
+      respond_with @administrator, location: administrator_path
+    end
+
+    def destroy
+      @administrator.destroy
+      redirect_to administrators_path
     end
 
     private

@@ -2,14 +2,14 @@
 
 module Admin
   class NavigationBuilder
-    def call
-      build
+    def call(current_ability:)
+      build(current_ability)
     end
 
     private
 
-    def build
-      Abilities::Admin::MODELS.each_with_object([]) do |item, memo|
+    def build(current_ability)
+      current_ability::MODELS.each_with_object([]) do |item, memo|
         controller_name = item.class_name.pluralize
         memo << { lable: controller_name, model: item }
       end

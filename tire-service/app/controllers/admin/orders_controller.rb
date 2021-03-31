@@ -19,11 +19,6 @@ module Admin
                              start_execution_at].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
-    def create
-      @order = Order.new(model_params)
-      redirect_to @order if @order.save
-    end
-
     def update
       @order.update update_model_params
       respond_with @order, location: order_path

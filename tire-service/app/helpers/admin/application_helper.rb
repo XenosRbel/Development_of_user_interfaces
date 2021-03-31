@@ -5,7 +5,7 @@ module Admin
     include BootstrapIcons::Rails::BiIconHelper
 
     def navigation
-      @navigation ||= Admin::NavigationBuilder.new.call
+      @navigation ||= Admin::NavigationBuilder.new.call(current_ability: current_ability.class)
     end
 
     def read_constant(constant_name)

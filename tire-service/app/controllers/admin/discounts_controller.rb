@@ -7,8 +7,21 @@ module Admin
 
     datatable model: Discount, exclude_attributes: %w[created_at updated_at]
 
-    def index
-      super
+    UPDATE_MODEL_PARAMS = %i[title
+                             description
+                             end_date_at
+                             start_date_at
+                             percent].freeze
+    MODEL_PARAMS = UPDATE_MODEL_PARAMS
+
+    def update
+      @discount.update update_model_params
+      respond_with @discount, location: discount_path
+    end
+
+    def destroy
+      @discount.destroy
+      redirect_to discounts_path
     end
   end
 end
