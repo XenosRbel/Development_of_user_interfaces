@@ -1,0 +1,27 @@
+.card.text-center
+  .card-body
+    h5.card-
+      span = I18n.t("activerecord.attributes.discount.id")
+      |&nbsp;
+      span = @discount.id
+  ul.list-group.list-group-flush
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.discount.title")
+      |:&nbsp;
+      span = @discount.title      
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.discount.description")
+      |:&nbsp;
+      span = @discount.description
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.discount.percent")
+      |:&nbsp;
+      span = @discount.percent
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.discount.start_date_at")
+      |:&nbsp;
+      span = @discount.start_date_at
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.discount.end_date_at")
+      |:&nbsp;
+      span = @discount.end_date_at
