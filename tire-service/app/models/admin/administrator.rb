@@ -8,7 +8,7 @@ module Admin
     self.table_name = :admin_administrators
 
     AVAILABLE_ROLES = %w[
-      admin chief_editor offices_editor
+      admin chief_editor manager chief_executive_officer
     ].freeze
 
     # Include default devise modules. Others available are:

@@ -24,6 +24,9 @@ ru:
         <<: *base_attributes
         start_execution_at: "Дата начала выполнения"
         end_execution_at: "Дата завершения выполнения"
+        customer: "Заказчик"
+        master: "Мастер"
+        discount: "Дискоунт"
       discount:
         <<: *base_attributes
         percent: "% скидки"
@@ -47,6 +50,11 @@ ru:
         email: "Email"
         voucher: "Ваучер"
         role: "Роль"
+        roles:
+          chief_executive_officer: "Главный исполнительный директор"
+          chief_editor: "Главный редактор"
+          admin: "Администратор"
+          manager: "Диспетчер"
   paths:
     home: "Домой"
     orders: "Заказы"
