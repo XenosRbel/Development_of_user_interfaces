@@ -7,5 +7,7 @@ module Admin
     belongs_to :master, foreign_key: :admin_master_id, class_name: "Admin::Master"
     belongs_to :discount, foreign_key: :admin_discount_id, class_name: "Admin::Discount"
     belongs_to :customer, foreign_key: :admin_customer_id, class_name: "Admin::Customer"
+
+    validates_datetime :end_execution_at, after: :start_execution_at, allow_blank: false
   end
 end

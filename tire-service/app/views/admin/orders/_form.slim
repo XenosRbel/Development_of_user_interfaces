@@ -6,6 +6,7 @@
       = f.select :admin_master_id, @master_select_options, {}, class: "form-control mt-3 mb-3"
       = f.select :admin_customer_id, @customer_select_options, {}, class: "form-control mt-3 mb-3"
       = f.select :admin_discount_id, @discount_select_options, {}, class: "form-control mt-3 mb-3"
+      = f.association :services, include_blank: false, input_html: { class: 'chosen-select' }
   .row
     .medium-12.columns.form__buttons
-      = f.button :submit, t("simple_form.submit"), class: "button tiny submit-button"
+      = f.button :submit, t("simple_form.submit"), class: "button tiny submit-button mt-3"

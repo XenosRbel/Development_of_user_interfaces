@@ -54,6 +54,7 @@ gem "sassc-rails"
 gem "bootstrap", "~> 4.6.0"
 gem "jquery-ui-rails"
 gem "bootstrap_icons_rails"
+gem "chosen-rails"
 
 # Views
 gem "cocoon"
@@ -63,6 +64,11 @@ gem "slim-rails", "~> 3.1.1"
 
 # Serializators
 gem "fast_jsonapi", "~> 1.5"
+
+# Validators
+gem "activerecord_json_validator"
+gem "validate_url"
+gem "validates_timeliness"
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem "turbolinks", "~> 5"
