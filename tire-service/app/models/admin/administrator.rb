@@ -21,6 +21,14 @@ module Admin
 
     before_validation :create_voucher
 
+    pg_search_scope :search, against: %i[id
+                                         email
+                                         first_name
+                                         last_name
+                                         father_name
+                                         phone_number
+                                         role]
+
     class << self
       def current=(user)
         RequestStore.store[:current_administrator] = user

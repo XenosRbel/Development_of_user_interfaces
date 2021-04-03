@@ -3,6 +3,9 @@
     = link_to(bi_icon("plus-square", text: t("cocoon.defaults.add")), 
                                      new_path_for(@model), 
                                      class: "btn btn-secondary")
+  = form_tag search_for(@model), method: :get, remote: false, class: "form-inline" do |f| 
+    = text_field_tag :search, params[:search], placeholder: t("cocoon.defaults.search"), class: "form-control me-2"
+    = submit_tag t("cocoon.defaults.search"), :name => nil, class: "btn btn-outline-success"
 .table-responsive
   table.table.align-middle.table-hover
     thead.thead-dark

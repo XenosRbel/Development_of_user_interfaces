@@ -28,7 +28,7 @@ module Admin
     def index
       @model_attributes = model_attributes
       @model = model
-      @model_items = @model.all
+      @model_items = respond_with_search
     end
 
     def create

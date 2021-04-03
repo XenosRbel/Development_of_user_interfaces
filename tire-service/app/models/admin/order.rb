@@ -10,5 +10,7 @@ module Admin
 
     validates_presence_of :services
     validates_datetime :end_execution_at, after: :start_execution_at, allow_blank: false
+
+    pg_search_scope :search, against: %i[id end_execution_at start_execution_at]
   end
 end

@@ -13,6 +13,10 @@ module ApplicationHelper
     public_send("new_#{model.name.split('::').last.downcase}_path")
   end
 
+  def search_for(model)
+    public_send("#{model.name.split('::').last.downcase.pluralize}_path")
+  end
+
   def title
     I18n.t("actions.#{params[:controller]}")
   end

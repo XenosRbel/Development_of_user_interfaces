@@ -34,6 +34,21 @@ module Admin
       def log_error(message)
         Rails.logger.error("#{self.class.name}: #{message}")
       end
+
+      def respond_with_search
+        items = model.search(search_params)
+        return model.all unless items.present?
+
+        items
+      end
+
+      def search_params
+        params.fetch(:search, "")
+      end
+
+      def buld_like_query
+        where("title LIKE ?", "%#{search}%")
+      end
     end
   end
 end

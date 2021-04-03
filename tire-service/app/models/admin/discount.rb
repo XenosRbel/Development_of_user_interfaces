@@ -6,5 +6,9 @@ module Admin
 
     validates :title, :description, presence: true
     validates_datetime :end_date_at, after: :start_date_at, allow_blank: false
+
+    pg_search_scope :search, against: %i[id
+                                         title
+                                         description]
   end
 end

@@ -96,6 +96,7 @@ ru:
       edit: "Редактирвоать"
       show: "Просмотреть"
       exit: "Выйти"
+      search: "Поиск"
   date:
     order:
       start_date_at: "Действует с"
