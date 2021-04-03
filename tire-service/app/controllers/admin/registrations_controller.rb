@@ -5,10 +5,10 @@ module Admin
     ADMIN_ADMINISTRATOR_PARAMS = %i[email password first_name last_name father_name phone_number role].freeze
 
     def create
-      unless Administrator.where(role: "admin").present?
-        admin_params = administrator_params.merge("role" => "admin")
+      unless Administrator.where(role: "chief_executive_officer").present?
+        admin_params = administrator_params.merge("role" => "chief_executive_officer")
         @administrator = Admin::Administrator.create(admin_params)
-        redirect_to root_path
+        redirect_to home_path
       end
       @administrator = Admin::Administrator.create(administrator_params)
       respond_to do |format|

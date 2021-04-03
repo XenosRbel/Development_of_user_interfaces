@@ -1,11 +1,7 @@
+title = title
+
 = render "layouts/admin/meta"
-= render "layouts/favicons"
-
-javascript:
-  var CKEDITOR_BASEPATH = "/assets/ckeditor/";
-
-= render "layouts/admin/assets"
+= javascript_include_tag "application"
+= stylesheet_link_tag "application"
 
 = csrf_meta_tags
-
-title = title

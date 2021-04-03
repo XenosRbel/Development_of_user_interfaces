@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require activestorage
 //= require_tree .
 //= require jquery
@@ -23,5 +22,5 @@
 
 $(function() {
   $('.chosen-select').chosen();
-  $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+  $('.chosen-select-deselect').chosen();
 });

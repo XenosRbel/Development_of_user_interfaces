@@ -4,8 +4,7 @@ Admin::Engine.routes.draw do
   devise_for :administrators, class_name: "Admin::Administrator"
 
   devise_scope :administrator do
-    get "/exit" => "/devise/sessions#destroy"
-    resources :users
+    get "/exit", to: "/devise/sessions#destroy"
   end
 
   resources :administrators
@@ -16,5 +15,5 @@ Admin::Engine.routes.draw do
   resources :masters
   resources :services
 
-  root to: "home#index"
+  root "home#index"
 end

@@ -6,6 +6,9 @@ module Admin
     include ApplicationHelper
     include Datatable
 
+    load_and_authorize_resource
+    skip_load_resource only: :index
+
     before_action :authenticate_administrator!, :set_current_administrator
 
     respond_to :html
