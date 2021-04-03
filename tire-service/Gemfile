@@ -56,6 +56,10 @@ gem "jquery-ui-rails"
 gem "bootstrap_icons_rails"
 gem "chosen-rails"
 
+# Front JS Rendering
+gem "react-rails"
+gem "webpacker", "~> 6.x"
+
 # Views
 gem "cocoon"
 gem "simple-navigation", "~> 4.0.3"

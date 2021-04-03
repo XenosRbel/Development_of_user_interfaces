@@ -3,5 +3,7 @@ title = title
 = render "layouts/admin/meta"
 = javascript_include_tag "application"
 = stylesheet_link_tag "application"
+= javascript_pack_tag 'application'
+= stylesheet_pack_tag 'application',  media: 'all', 'data-turbolinks-track': 'reload'
 
 = csrf_meta_tags
