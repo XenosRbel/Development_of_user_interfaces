@@ -65,6 +65,13 @@ gem "slim-rails", "~> 3.1.1"
 # Serializators
 gem "fast_jsonapi", "~> 1.5"
 
+# Parser
+gem "json-schema", "~> 2.8", ">= 2.8.1"
+
+# API documentation
+gem "rswag-api", "~> 2.2.0"
+gem "rswag-ui", "~> 2.2.0"
+
 # Validators
 gem "activerecord_json_validator"
 gem "validate_url"
@@ -87,6 +94,9 @@ group :development, :test do
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "spring-commands-rspec", "~> 1.0", ">= 1.0.4"
+
+  # API documentation
+  gem "rswag-specs", "~> 2.2.0"
 end
 
 group :development do
