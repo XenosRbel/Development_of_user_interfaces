@@ -20,5 +20,9 @@ module SiteHandler
     def raise_not_found_error
       raise ActionController::RoutingError, "Not Found"
     end
+
+    def stripped_domain
+      request.env["HTTP_HOST"].sub("www.", "")
+    end
   end
 end

@@ -4,6 +4,7 @@ module Admin
   class OrdersController < ApplicationController
     load_and_authorize_resource
     skip_load_resource only: :index
+
     before_action :select_option_collection, only: %i[edit new update]
 
     datatable model: Order, exclude_attributes: %w[created_at

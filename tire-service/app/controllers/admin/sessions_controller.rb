@@ -2,7 +2,12 @@
 
 module Admin
   class SessionsController < Devise::SessionsController
-    # before_action :configure_sign_in_params, only: [:create]
+    before_action :configure_sign_in_params, only: [:create]
+
+    UPDATE_MODEL_PARAMS = %i[email
+                             password
+                             remember_me].freeze
+    MODEL_PARAMS = UPDATE_MODEL_PARAMS
 
     # GET /resource/sign_in
     def new
@@ -22,8 +27,8 @@ module Admin
     # protected
 
     # If you have extra params to permit, append them to the sanitizer.
-    # def configure_sign_in_params
-    #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
-    # end
+    def configure_sign_in_params
+      params.require(:administrator).permit(*MODEL_PARAMS)
+    end
   end
 end

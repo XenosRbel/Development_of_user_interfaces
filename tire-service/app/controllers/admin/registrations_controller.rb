@@ -5,19 +5,24 @@ module Admin
     ADMIN_ADMINISTRATOR_PARAMS = %i[email password first_name last_name father_name phone_number role].freeze
 
     def create
-      unless Administrator.where(role: "chief_executive_officer").present?
-        admin_params = administrator_params.merge("role" => "chief_executive_officer")
-        @administrator = Admin::Administrator.create(admin_params)
-        redirect_to home_path
-      end
-      @administrator = Admin::Administrator.create(administrator_params)
-      respond_to do |format|
-        format.html
-        format.json { render json: @administrator }
-      end
+      build_administrator_with_role(:manager) unless create_chief_executive_officer.present?
+
+      redirect_to administrator_session_path
     end
 
     private
+
+    def create_chief_executive_officer
+      return if Admin::Administrator.where(role: "chief_executive_officer").take.present?
+
+      build_administrator_with_role(:chief_executive_officer)
+    end
+
+    def build_administrator_with_role(role)
+      @administrator = Admin::Administrator.new(administrator_params)
+      @administrator.role = role.to_s
+      @administrator.save
+    end
 
     def administrator_params
       params.require(:administrator).permit(*ADMIN_ADMINISTRATOR_PARAMS)

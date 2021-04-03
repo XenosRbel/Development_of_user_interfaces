@@ -5,9 +5,7 @@ module Admin
     include SiteHandler
     include ApplicationHelper
     include Datatable
-
-    load_and_authorize_resource
-    skip_load_resource only: :index
+    include RespondHelper
 
     before_action :authenticate_administrator!, :set_current_administrator
 
@@ -19,8 +17,12 @@ module Admin
     layout "admin"
 
     rescue_from CanCan::AccessDenied do |exception|
-      flash[:error] = exception.message
-      redirect_to root_path
+      if current_user
+        redirect_to root_path
+      else
+        flash[:error] = exception.message
+        head status: :unauthorized
+      end
     end
 
     def index
@@ -41,6 +43,14 @@ module Admin
         redirect_to action: action
       else
         respond_with model
+      end
+    end
+
+    def authenticate_administrator!
+      if administrator_signed_in?
+        super
+      else
+        redirect_to administrator_session_path, notice: "if you want to add a notice"
       end
     end
 

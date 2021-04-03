@@ -2,9 +2,6 @@
 
 module Admin
   class UsersController < ApplicationController
-    include SiteHandler
-    not_add_site_to_params
-
     load_and_authorize_resource
     skip_load_resource only: :index
 
