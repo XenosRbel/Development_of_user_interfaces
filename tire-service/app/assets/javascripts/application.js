@@ -19,6 +19,8 @@
 //= require popper
 //= require bootstrap
 //= require chosen-jquery
+//= require chartkick
+//= require Chart.bundle
 
 $(function() {
   $('.chosen-select').chosen();

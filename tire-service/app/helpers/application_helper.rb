@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
+  include Chartkick::Helper
+
   def path_for(model)
     public_send("#{model.class.name.split('::').last.downcase}_path", model)
   end

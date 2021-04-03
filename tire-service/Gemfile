@@ -34,6 +34,7 @@ gem "seedbank", "~> 0.3.0"
 gem "strong_migrations", "~> 0.6.4"
 gem "activerecord-postgres_enum", "~> 1.6"
 gem "pg_inheritance"
+gem "groupdate"
 
 # Authorization
 gem "cancancan", "~> 1.15.0"
@@ -65,6 +66,7 @@ gem "cocoon"
 gem "simple-navigation", "~> 4.0.3"
 gem "simple_form", "~> 4.1"
 gem "slim-rails", "~> 3.1.1"
+gem "chartkick"
 
 # Serializators
 gem "fast_jsonapi", "~> 1.5"

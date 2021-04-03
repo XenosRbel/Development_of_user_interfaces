@@ -79,6 +79,7 @@ GEM
     builder (3.2.4)
     byebug (11.1.3)
     cancancan (1.15.0)
+    chartkick (3.4.2)
     chosen-rails (1.9.0)
       coffee-rails (>= 3.2)
       railties (>= 3.0)
@@ -127,6 +128,8 @@ GEM
       railties (>= 3.2, < 7)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.2.2)
+      activesupport (>= 5)
     hashdiff (1.0.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
@@ -390,6 +393,7 @@ DEPENDENCIES
   bootstrap (~> 4.6.0)
   bootstrap_icons_rails
   cancancan (~> 1.15.0)
+  chartkick
   chosen-rails
   cocoon
   database_cleaner (~> 1.7)
@@ -400,6 +404,7 @@ DEPENDENCIES
   fast_jsonapi (~> 1.5)
   ffaker (~> 2.17.0)
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
+  groupdate
   i18n-js (~> 3.0.0.rc13)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.1.1)

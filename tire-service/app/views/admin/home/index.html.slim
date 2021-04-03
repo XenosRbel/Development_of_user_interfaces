@@ -1,2 +1,7 @@
 h1 Admin::Home#index
 p Find me in app/views/admin/home/index.html.slim
+
+= pie_chart Admin::Order.group_by_day(:created_at).count
+
+= column_chart Admin::Order.group_by_day_of_week(:end_execution_at).count
+= area_chart Admin::Order.group_by_day_of_week(:end_execution_at).count

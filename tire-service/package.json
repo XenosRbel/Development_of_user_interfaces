@@ -4,6 +4,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.13.13",
     "@rails/webpacker": "^6.0.0-beta.5",
+    "chart.js": "^3.0.1",
+    "chartkick": "^3.2.1",
     "css-loader": "^5.2.0",
     "css-minimizer-webpack-plugin": "^1.3.0",
     "mini-css-extract-plugin": "^1.4.0",
