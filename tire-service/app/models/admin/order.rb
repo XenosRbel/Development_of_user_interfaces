@@ -13,6 +13,15 @@ module Admin
 
     pg_search_scope :search, against: %i[id end_execution_at start_execution_at]
 
+    scope :find_not_finished, lambda {
+      where(
+        arel_table[:start_execution_at]
+          .lt(arel_table[:end_execution_at])
+          .and(arel_table[:end_execution_at]
+            .gt(Arel::Nodes::NamedFunction.new("now", [])))
+      )
+    }
+
     def total_sum
       services.sum(:price)
     end

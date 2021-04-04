@@ -43,4 +43,19 @@ RSpec.describe Admin::Order, type: :model do
       it { is_expected.to validate_presence_of attribute }
     end
   end
+
+  describe "#find_not_finished" do
+    let(:relation) { Admin::Order }
+    subject { relation.find_not_finished.to_sql }
+
+    let(:expected_sql) do
+      <<~SQL.squish
+        SELECT "admin_orders".* FROM "admin_orders"
+          WHERE "admin_orders"."start_execution_at" < "admin_orders"."end_execution_at"
+          AND "admin_orders"."end_execution_at" > now()
+      SQL
+    end
+
+    it { is_expected.to end_with(expected_sql) }
+  end
 end

@@ -30,11 +30,11 @@ module Front
     end
 
     def search_by_order_id(value)
-      Admin::Order.where(id: value)
+      Admin::Order.find_not_finished.where(id: value)
     end
 
     def search_by_phone_number(value)
-      return Admin::Customer.where(phone_number: value).take.orders if valid_phone_number?(value)
+      return Admin::Customer.where(phone_number: value).take.orders.find_not_finished if valid_phone_number?(value)
     end
 
     def home_params
