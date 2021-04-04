@@ -97,6 +97,7 @@ ru:
     users: "Пользователи"
     admin/customers: "Заказчики"
     admin/administrators: "Администраторы"
+    admin/news: "Новости"
   roles:
     admin: "Администратор"
   cocoon:
