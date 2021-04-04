@@ -3,5 +3,10 @@
 require "rails_helper"
 
 RSpec.describe Admin::News, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { build(:news) }
+
+  describe "schema" do
+    it { is_expected.to have_db_column(:title).of_type(:string) }
+    it { is_expected.to have_db_column(:content).of_type(:string) }
+  end
 end
