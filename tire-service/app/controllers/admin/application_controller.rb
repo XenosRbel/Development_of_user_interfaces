@@ -4,7 +4,6 @@ module Admin
   class ApplicationController < ::ApplicationController
     include Admin::SiteHandler
     include Admin::ApplicationHelper
-    include Admin::Datatable
     include Admin::RespondHelper
 
     before_action :authenticate_administrator!, :set_current_administrator

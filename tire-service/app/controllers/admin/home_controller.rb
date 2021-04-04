@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 module Admin
-  class HomeController < ApplicationController
+  class HomeController < Admin::ApplicationController
     skip_load_and_authorize_resource
 
     before_action :report_params, only: %i[index]
 
     def index; end
-
-    def denied; end
 
     private
 

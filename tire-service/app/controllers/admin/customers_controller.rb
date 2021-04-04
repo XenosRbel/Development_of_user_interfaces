@@ -2,6 +2,8 @@
 
 module Admin
   class CustomersController < ApplicationController
+    include Admin::Datatable
+
     load_and_authorize_resource
     skip_load_resource only: :index
 
