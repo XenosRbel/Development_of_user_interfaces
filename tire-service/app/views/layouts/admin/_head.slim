@@ -1,11 +1,9 @@
+title = title
+
 = render "layouts/admin/meta"
-
-title = page_title
-
-javascript:
-  var CKEDITOR_BASEPATH = "/assets/ckeditor/";
-
-= javascript_include_tag "admin/application", "data-turbolinks-track": true
-= render "layouts/admin/assets"
+= javascript_include_tag "application"
+= stylesheet_link_tag "application"
+= javascript_pack_tag 'application'
+= stylesheet_pack_tag 'application',  media: 'all', 'data-turbolinks-track': 'reload'
 
 = csrf_meta_tags

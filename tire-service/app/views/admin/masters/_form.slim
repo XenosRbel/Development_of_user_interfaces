@@ -1,0 +1,12 @@
+= simple_form_for @master do |f|
+  .row
+    .medium-4.columns
+      = f.input :last_name
+      = f.input :first_name
+      = f.input :father_name
+      = f.input :phone_number
+      = f.input :specialization
+      = f.input :work_experience
+  .row
+    .medium-12.columns.form__buttons
+      = f.button :submit, t("simple_form.submit"), class: "button tiny submit-button mt-3"

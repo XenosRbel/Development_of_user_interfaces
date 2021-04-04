@@ -1,0 +1,130 @@
+ru:
+  activerecord: &activerecord
+    errors:
+      models:
+        admin/order:
+          attributes:
+            master:
+              required: "Заказ без мастера не может существовать!"
+            customer:
+              required: "Заказ без клиента не может существовать!"
+            discount:
+              required: "Заказ без скидки не может существовать!"
+            end_execution_at:
+              after: "Дата завершения выполнения рабо, ты не может быть меньше даты начала выполнения"
+        admin/customer:
+          attributes:
+            phone_number:
+              invalid_number_format: "Неправильно указан номер телефона"
+    models:
+      user:
+        one: "Пользователь"
+        few: "Пользователи"
+        many: "Пользователи"
+        other: "Пользователи"
+    base_attributes: &base_attributes
+      id: "#"
+      created_at: "Дата создания"
+      updated_at: "Дата изменения"
+    attributes:
+      user: &user
+        <<: *base_attributes
+        first_name: "Имя"
+        last_name: "Фамилия"
+        father_name: "Отчество"
+        phone_number: "Номер телефона"
+      admin/customer: 
+        <<: *base_attributes
+        <<: *user
+      admin/order:
+        <<: *base_attributes
+        start_execution_at: "Дата начала выполнения"
+        end_execution_at: "Дата завершения выполнения"
+        customer: "Заказчик"
+        master: "Мастер"
+        discount: "Дискоунт"
+        services: "Услуги"
+        total_sum: "Сумма (BYN) заказа"
+        total_sum_with_discount: "Сумма (BYN) с учетом скидки"
+      admin/news:
+        <<: *base_attributes
+        content: "Содержание"
+        title: "Заголовок"
+      admin/discount:
+        <<: *base_attributes
+        percent: "% скидки"
+        description: "Описание"
+        title: "Заголовок"
+        start_date_at: "Действует с"
+        end_date_at: "Действует до"
+      admin/service:
+        <<: *base_attributes
+        price: "Цена (BYN)"
+        description: "Описание"
+        title: "Заголовок"
+      admin/master:
+        <<: *base_attributes
+        <<: *user
+        specialization: "Специализация"
+        work_experience: "Суммарный опыт работы"
+      admin/administrator: 
+        <<: *base_attributes
+        <<: *user
+        email: "Email"
+        voucher: "Ваучер"
+        role: "Роль"
+        roles:
+          chief_executive_officer: "Главный исполнительный директор"
+          chief_editor: "Главный редактор"
+          admin: "Администратор"
+          manager: "Диспетчер"
+  paths:
+    home: "Домой"
+    orders: "Заказы"
+    discounts: "Дискоунт"
+    services: "Услуги"
+    masters: "Мастера"
+    users: "Пользователи"
+    customers: "Заказчики"
+    administrators: "Администраторы"
+    news: "Новости"
+    order_info: "Информация о заказе"
+  actions:
+    admin/home: "Главная"
+    admin/orders: "Заказы"
+    admin/discounts: "Дискоунт"
+    admin/services: "Услуги"
+    admin/masters: "Мастера"
+    users: "Пользователи"
+    admin/customers: "Заказчики"
+    admin/administrators: "Администраторы"
+    admin/news: "Новости"
+  roles:
+    admin: "Администратор"
+  cocoon:
+    defaults:
+      actions: "Действия"
+      add: "Добавить"
+      remove: "Удалить"
+      edit: "Редактирвоать"
+      show: "Просмотреть"
+      exit: "Выйти"
+      search: "Поиск"
+  date:
+    order:
+      start_date_at: "Действует с"
+      end_date_at: "Действует до"
+  reports:
+    title: "Статистика"
+    order: "Заказ: %{order_id}"
+    best_selling_services: "Cамые продаваемые услуги"
+    orders_stats_by_price: "Самые дорогие заказы"
+    сustomer_growth_statistics: "Статистика роста клиентов"
+    orders_accepted_by_master: "Принятые заказы мастером"
+    increase_orders_per_day_of_week: "Увеличение заказов за неделю"
+  front/home:
+    site_name: "Автосервис на RoR"
+    news_on_main: "Новости на главной"
+    search_order: "Введите свой номер телефона"
+    not_found_data: "Ничего не найдено"
+    description: "Сайт работает на Ruby on Rails, PostgreSQL, Webpacker"

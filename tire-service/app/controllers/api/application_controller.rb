@@ -2,6 +2,8 @@
 
 module Api
   class ApplicationController < ActionController::Base
+    include SiteHandler
+
     respond_to :json
     rescue_from StandardError, with: :exception
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found

@@ -1,26 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  extend Enumerize
-
-  AVAILABLE_ROLES = %w[
-    admin chief_editor managers_editor
-  ].freeze
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :trackable
-
-  validates :email, :last_name, :name, :father_name, :role, :sites, presence: true
-
-  enumerize :role, in: AVAILABLE_ROLES, predicates: true
+  validates_with ::PhoneNumberValidator, field: :phone_number
 
   def full_name
-    "#{last_name}\t#{name}\t#{father_name}"
-  end
-
-  def role_available?
-    AVAILABLE_ROLES.include?(role)
+    "#{first_name}\t#{last_name}\t#{father_name}"
   end
 end

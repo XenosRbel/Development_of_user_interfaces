@@ -1,0 +1,39 @@
+.card.text-center
+  .card-body
+    h5.card-
+      span = I18n.t("activerecord.attributes.admin/master.id")
+      |&nbsp;
+      span = @master.id
+  ul.list-group.list-group-flush
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/master.last_name")
+      |:&nbsp;
+      span = @master.last_name      
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/master.first_name")
+      |:&nbsp;
+      span = @master.first_name
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/master.father_name")
+      |:&nbsp;
+      span = @master.father_name
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/master.phone_number")
+      |:&nbsp;
+      span = @master.phone_number
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/master.specialization")
+      |:&nbsp;
+      span = @master.specialization
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/master.work_experience")
+      |:&nbsp;
+      span = @master.work_experience.round(2)
+    li.list-group-item
+      span = I18n.t("paths.orders")
+      |:&nbsp;
+      - @master.orders.each do |order|
+        span = link_to  "# #{order.id}", order
+        |&nbsp;
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@master), method: :get, class: "btn btn-warning"

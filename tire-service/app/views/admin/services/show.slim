@@ -1,0 +1,21 @@
+.card.text-center
+  .card-body
+    h5.card-
+      span = I18n.t("activerecord.attributes.admin/service.id")
+      |&nbsp;
+      span = @service.id
+  ul.list-group.list-group-flush
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/service.title")
+      |:&nbsp;
+      span = @service.title      
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/service.description")
+      |:&nbsp;
+      span = @service.description
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/service.price")
+      |:&nbsp;
+      span = @service.price
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@service), method: :get, class: "btn btn-warning"

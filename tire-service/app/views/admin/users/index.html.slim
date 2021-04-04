@@ -1,0 +1,25 @@
+table.table
+  thead.thead-dark
+    tr
+      th scope="col" #
+      th scope="col"= I18n.t('activerecord.attributes.user.first_name')
+      th scope="col"= I18n.t('activerecord.attributes.user.last_name')
+      th scope="col"= I18n.t('activerecord.attributes.user.father_name')
+      th scope="col"= I18n.t('activerecord.attributes.user.phone_number')
+      th scope="col"= I18n.t('cocoon.defaults.actions')
+  tbody
+    - @users.each do |user|
+      tr
+        th
+          = user.id
+        th
+          = user.first_name
+        th
+          = user.last_name
+        th
+          = user.father_name
+        th
+          = user.phone_number
+        th
+          = render "actions", model: user
+

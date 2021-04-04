@@ -1,0 +1,15 @@
+h1.display-1.mb-3 = t("reports.title")
+.container-fluid.mb-3
+  .row
+    .col-md-8.border.border-primary
+      = pie_chart @orders_accepted_by_master_options, title: t("reports.orders_accepted_by_master")
+    .col-6.col-md-4.border.border-primary
+      = column_chart @increase_orders_per_day_of_week_options,
+                     title: t("reports.increase_orders_per_day_of_week")
+
+.container-fluid.mt-3
+  .row
+    .col-md-8.border.border-primary
+      = column_chart @best_seller_options, title: t("reports.orders_stats_by_price")
+    .col-6.col-md-4.border.border-primary
+      = area_chart @customer_growth_options, title: t("reports.сustomer_growth_statistics")

@@ -8,6 +8,8 @@ threads min_threads, max_threads
 
 preload_app!
 activate_control_app "tcp://127.0.0.1:9000", no_token: true
+plugin :yabeda
+plugin :yabeda_prometheus
 
 puma_host = ENV["PUMA_HOST"]
 puma_port = ENV.fetch("PORT", 3000).to_i
@@ -24,10 +26,10 @@ on_worker_boot do
   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
 end
 
-# pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
-
+# As we are preloading our application and using ActiveRecord
+# it's recommended that we close any connections to the database here to prevent connection leakage
+# This rule also applies to any connections to external services (Redis, databases, memcache, ...)
+# that might be started automatically by the framework.
 before_fork do
   ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
 end
-
-plugin :tmp_restart
