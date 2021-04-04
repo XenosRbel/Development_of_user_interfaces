@@ -3,11 +3,5 @@
 require "swagger_helper"
 
 RSpec.describe "api/v1/services", type: :request do
-  before { Admin::Service.new.save }
-
-  path "/services" do
-    operationId "GET" do
-      response 200, description: "successful"
-    end
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end

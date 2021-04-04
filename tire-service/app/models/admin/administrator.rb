@@ -16,7 +16,7 @@ module Admin
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :validatable
 
-    validates :email, :first_name, :last_name, :father_name, :phone_number, :role, :voucher, presence: true
+    validates :email, :first_name, :last_name, :father_name, :phone_number, :role, presence: true
     enumerize :role, in: AVAILABLE_ROLES, predicates: true
 
     before_validation :create_voucher

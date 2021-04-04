@@ -1,19 +1,9 @@
-require 'rails_helper'
+# frozen_string_literal: true
+
+require "rails_helper"
 
 RSpec.describe Admin::NewsController, type: :controller do
+  routes { Admin::Engine.routes }
 
-  describe "GET #title:string" do
-    it "returns http success" do
-      get :title:string
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET #content:string" do
-    it "returns http success" do
-      get :content:string
-      expect(response).to have_http_status(:success)
-    end
-  end
-
+  pending "add some examples to (or delete) #{__FILE__}"
 end
