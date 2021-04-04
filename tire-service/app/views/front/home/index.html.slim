@@ -1,0 +1,44 @@
+.jumbotron.jumbotron-fluid
+  .container
+    h1.display-4 = t("front/home.site_name")
+    p.lead = t("front/home.news_on_main")
+.container
+  .row
+    = link_to t("paths.order_info"), "#collapseOrderInfo", class: "col btn btn-primary ml-3",
+                                          :"data-toggle" => "collapse",
+                                          :"role" => "button",
+                                          :"aria-expanded" => "false",
+                                          :"aria-controls" => "collapseOrderInfo"
+.collapse.mt-3 id="collapseOrderInfo"
+  .container
+    .row
+      .form-inline.col-sm
+        = form_tag order_info_path, method: :get,
+                                    remote: true,
+                                    :"data-type" => :html,
+                                    id: "search_order",
+                                    class: "form-inline" do |f|
+          = text_field_tag :search,
+                          params[:search],
+                          placeholder: t("front/home.search_order"),
+                          class: "form-control me-2"
+          = submit_tag t("cocoon.defaults.search"),
+                        :name => nil,
+                        class: "btn btn-outline-success"
+    .row
+      .col
+        .card-footer-text-muted.mt-3 id="order-report-results"
+.container.mt-3
+  - @news.each do |news_item|
+    .card.card-body
+      h5.card-title = news_item.title
+      p.class-text = news_item.content
+      h6.card-subtitle.mt-2.text-muted
+        span = t("activerecord.attributes.admin/news.created_at")
+        |:&nbsp;
+        span = news_item.created_at
+        p
+        span = t("activerecord.attributes.admin/news.updated_at")
+        |:&nbsp;
+        span = news_item.updated_at
+    p

@@ -88,6 +88,7 @@ ru:
     customers: "Заказчики"
     administrators: "Администраторы"
     news: "Новости"
+    order_info: "Информация о заказе"
   actions:
     admin/home: "Главная"
     admin/orders: "Заказы"
@@ -121,3 +122,8 @@ ru:
     сustomer_growth_statistics: "Статистика роста клиентов"
     orders_accepted_by_master: "Принятые заказы мастером"
     increase_orders_per_day_of_week: "Увеличение заказов за неделю"
+  front/home:
+    site_name: "Автосервис на RoR"
+    news_on_main: "Новости на главной"
+    search_order: "Введите свой номер телефона"
+    not_found_data: "Ничего не найдено"
