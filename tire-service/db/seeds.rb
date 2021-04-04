@@ -17,7 +17,7 @@ def self.create_admin_master
     first_name: FFaker::NameRU.first_name,
     father_name: FFaker::NameRU.middle_name_male,
     phone_number: create_belarus_phone_number,
-    specialization: FFaker::Job.title,
+    specialization: FFaker::Education.degree,
     work_experience: FFaker::Random.rand(0.0..9)
   )
 end
@@ -60,6 +60,14 @@ def self.create_admin_order(service, master, discount, customer)
   )
 end
 
+def self.create_admin_news
+  Admin::News.create(
+    created_at: FFaker::Random.rand(1..24).months.from_now,
+    title: FFaker::Book.title,
+    content: FFaker::Lorem.sentences(10).join(" ").html_safe
+  )
+end
+
 10.times do |_n|
   master = create_admin_master
   customer = create_admin_customer
@@ -78,5 +86,6 @@ end
     father_name: FFaker::NameRU.middle_name_male,
     phone_number: create_belarus_phone_number
   )
+  create_admin_news
   print "Generate fake data successfully\n"
 end

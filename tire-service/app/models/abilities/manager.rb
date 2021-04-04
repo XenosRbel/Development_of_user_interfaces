@@ -18,7 +18,8 @@ module Abilities
              ::Admin::Administrator,
              ::Admin::Discount,
              ::Admin::Master,
-             ::Admin::Service],
+             ::Admin::Service,
+             ::Admin::News],
       create: [::Admin::Order, ::Admin::Customer]
     }.freeze
   end

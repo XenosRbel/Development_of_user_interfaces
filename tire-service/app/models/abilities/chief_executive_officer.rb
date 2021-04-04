@@ -8,7 +8,8 @@ module Abilities
       ::Admin::Administrator,
       ::Admin::Discount,
       ::Admin::Master,
-      ::Admin::Service
+      ::Admin::Service,
+      ::Admin::News
     ].freeze
 
     PERMISSIONS = {

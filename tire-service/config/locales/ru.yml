@@ -46,6 +46,10 @@ ru:
         services: "Услуги"
         total_sum: "Сумма (BYN) заказа"
         total_sum_with_discount: "Сумма (BYN) с учетом скидки"
+      admin/news:
+        <<: *base_attributes
+        content: "Содержание"
+        title: "Заголовок"
       admin/discount:
         <<: *base_attributes
         percent: "% скидки"
@@ -83,6 +87,7 @@ ru:
     users: "Пользователи"
     customers: "Заказчики"
     administrators: "Администраторы"
+    news: "Новости"
   actions:
     admin/home: "Главная"
     admin/orders: "Заказы"

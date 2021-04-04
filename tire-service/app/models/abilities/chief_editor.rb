@@ -8,7 +8,8 @@ module Abilities
       ::Admin::Administrator,
       ::Admin::Discount,
       ::Admin::Master,
-      ::Admin::Service
+      ::Admin::Service,
+      ::Admin::News
     ].freeze
 
     PERMISSIONS = {
@@ -20,7 +21,8 @@ module Abilities
         ::Admin::Customer,
         ::Admin::Discount,
         ::Admin::Master,
-        ::Admin::Service
+        ::Admin::Service,
+        ::Admin::News
       ]
     }.freeze
   end

@@ -16,7 +16,10 @@ module ApplicationHelper
   end
 
   def search_for(model)
-    public_send("#{model.name.split('::').last.downcase.pluralize}_path")
+    model_name = model.name.split("::").last.downcase.pluralize
+    return public_send("#{model_name}_index_path") if model_name.to_sym == :news
+
+    public_send("#{model_name}_path")
   end
 
   def title
