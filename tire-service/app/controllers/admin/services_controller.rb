@@ -18,7 +18,7 @@ module Admin
     end
 
     def update
-      @service.update update_model_params
+      @service.update(model_params)
       respond_with @service, location: service_path
     end
 

@@ -21,6 +21,9 @@
 //= require chosen-jquery
 //= require chartkick
 //= require Chart.bundle
+//= require bootstrap-select
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 
 $(function() {
   $('.chosen-select').chosen();

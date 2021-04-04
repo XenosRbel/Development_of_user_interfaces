@@ -24,4 +24,19 @@
     li.list-group-item
       span = I18n.t("activerecord.attributes.admin/order.discount")
       |:&nbsp;
-      span = link_to @order.discount.title, @order.discount 
+      span = link_to discount_title(@order), @order.discount
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/order.services")
+      |:&nbsp;
+      - @order.services.each do |service|
+          p = link_to service.title, service 
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/order.total_sum")
+      |:&nbsp;
+      span = @order.total_sum
+    li.list-group-item
+      span = I18n.t("activerecord.attributes.admin/order.total_sum_with_discount")
+      |:&nbsp;
+      span = @order.total_sum_with_discount
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@order), method: :get, class: "btn btn-warning"

@@ -12,6 +12,10 @@ ru:
               required: "Заказ без скидки не может существовать!"
             end_execution_at:
               after: "Дата завершения выполнения рабо, ты не может быть меньше даты начала выполнения"
+        admin/customer:
+          attributes:
+            phone_number:
+              invalid_number_format: "Неправильно указан номер телефона"
     models:
       user:
         one: "Пользователь"
@@ -40,6 +44,8 @@ ru:
         master: "Мастер"
         discount: "Дискоунт"
         services: "Услуги"
+        total_sum: "Сумма (BYN) заказа"
+        total_sum_with_discount: "Сумма (BYN) с учетом скидки"
       admin/discount:
         <<: *base_attributes
         percent: "% скидки"
@@ -101,3 +107,11 @@ ru:
     order:
       start_date_at: "Действует с"
       end_date_at: "Действует до"
+  reports:
+    title: "Статистика"
+    order: "Заказ: %{order_id}"
+    best_selling_services: "Cамые продаваемые услуги"
+    orders_stats_by_price: "Самые дорогие заказы"
+    сustomer_growth_statistics: "Статистика роста клиентов"
+    orders_accepted_by_master: "Принятые заказы мастером"
+    increase_orders_per_day_of_week: "Увеличение заказов за неделю"

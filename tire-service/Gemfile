@@ -55,6 +55,7 @@ gem "sassc-rails"
 gem "bootstrap", "~> 4.6.0"
 gem "jquery-ui-rails"
 gem "bootstrap_icons_rails"
+gem "bootstrap-select-rails"
 gem "chosen-rails"
 
 # Front JS Rendering

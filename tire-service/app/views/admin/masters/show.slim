@@ -28,4 +28,12 @@
     li.list-group-item
       span = I18n.t("activerecord.attributes.admin/master.work_experience")
       |:&nbsp;
-      span = @master.work_experience
+      span = @master.work_experience.round(2)
+    li.list-group-item
+      span = I18n.t("paths.orders")
+      |:&nbsp;
+      - @master.orders.each do |order|
+        span = link_to  "# #{order.id}", order
+        |&nbsp;
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@master), method: :get, class: "btn btn-warning"

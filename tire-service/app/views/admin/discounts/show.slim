@@ -25,3 +25,5 @@
       span = I18n.t("activerecord.attributes.admin/discount.end_date_at")
       |:&nbsp;
       span = @discount.end_date_at
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@discount), method: :get, class: "btn btn-warning"

@@ -21,7 +21,7 @@ module Admin
     end
 
     def update
-      @master.update update_model_params
+      @master.update(model_params)
       respond_with @master, location: master_path
     end
 

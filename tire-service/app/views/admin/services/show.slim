@@ -17,3 +17,5 @@
       span = I18n.t("activerecord.attributes.admin/service.price")
       |:&nbsp;
       span = @service.price
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@service), method: :get, class: "btn btn-warning"

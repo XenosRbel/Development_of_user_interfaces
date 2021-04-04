@@ -20,7 +20,7 @@ module Admin
     end
 
     def update
-      @discount.update update_model_params
+      @discount.update(model_params)
       respond_with @discount, location: discount_path
     end
 

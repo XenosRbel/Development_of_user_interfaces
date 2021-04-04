@@ -37,7 +37,7 @@ module Admin
 
       def respond_with_search
         items = model.search(search_params)
-        return model.all unless items.present?
+        return model.all.order(id: :ASC) unless items.present?
 
         items
       end

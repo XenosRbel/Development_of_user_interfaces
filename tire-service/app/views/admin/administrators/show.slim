@@ -33,4 +33,5 @@
       span = I18n.t("activerecord.attributes.admin/administrator.voucher")
       |:&nbsp;
       span = @administrator.voucher
-
+  .card-body
+    = link_to I18n.t('cocoon.defaults.edit'), edit_path_for(@administrator), method: :get, class: "btn btn-warning"

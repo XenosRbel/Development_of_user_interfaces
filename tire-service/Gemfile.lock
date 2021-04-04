@@ -74,6 +74,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
+    bootstrap-select-rails (1.13.8)
     bootstrap_icons_rails (1.20.16)
       railties (>= 4.2)
     builder (3.2.4)
@@ -391,6 +392,7 @@ DEPENDENCIES
   awesome_print
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.6.0)
+  bootstrap-select-rails
   bootstrap_icons_rails
   cancancan (~> 1.15.0)
   chartkick

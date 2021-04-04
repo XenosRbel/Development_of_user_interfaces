@@ -19,7 +19,7 @@ module Admin
     end
 
     def update
-      @customer.update update_model_params
+      @customer.update(model_params)
       respond_with @order, location: customer_path
     end
 

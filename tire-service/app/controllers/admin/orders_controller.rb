@@ -26,7 +26,7 @@ module Admin
     end
 
     def update
-      @order.update update_model_params
+      @order.update(model_params)
       respond_with @order, location: order_path
     end
 
