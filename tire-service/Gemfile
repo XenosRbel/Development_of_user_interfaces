@@ -73,7 +73,9 @@ gem "chartkick"
 gem "fast_jsonapi", "~> 1.5"
 
 # Parser
-gem "json-schema", "~> 2.8", ">= 2.8.1"
+gem "json-schema"
+gem "nokogiri"
+gem "fast_excel"
 
 # API documentation
 gem "rswag-api", "~> 2.2.0"
@@ -119,10 +121,12 @@ end
 group :test do
   gem "database_cleaner", "~> 1.7"
   gem "factory_bot_rails", "~> 5.1.1", require: false
-  gem "json_matchers", "~> 0.11.0"
+  gem "json_matchers"
   gem "rails-controller-testing", "~> 1.0", ">= 1.0.4"
   gem "shoulda-matchers", "~> 4.1.2"
+  gem "timecop", "~> 0.9.1"
   gem "webmock", "~> 3.5", ">= 3.5.1"
+  gem "timecop-rspec", "~> 1.0.0", git: "https://github.com/avantoss/timecop-rspec"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

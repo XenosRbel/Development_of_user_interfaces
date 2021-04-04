@@ -6,7 +6,8 @@ module Admin
 
     has_and_belongs_to_many :orders, class_name: "Admin::Order"
 
-    pg_search_scope :search, against: %i[id description
+    pg_search_scope :search, against: %i[id
+                                         description
                                          title
                                          price]
   end
