@@ -127,3 +127,4 @@ ru:
     news_on_main: "Новости на главной"
     search_order: "Введите свой номер телефона"
     not_found_data: "Ничего не найдено"
+    description: "Сайт работает на Ruby on Rails, PostgreSQL, Webpacker"

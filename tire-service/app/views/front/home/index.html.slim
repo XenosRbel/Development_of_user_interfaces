@@ -1,7 +1,7 @@
 .jumbotron.jumbotron-fluid
   .container
-    h1.display-4 = t("front/home.site_name")
-    p.lead = t("front/home.news_on_main")
+    h1.display-1 = t("front/home.site_name")
+    p.lead = t("front/home.description")
 .container
   .row
     = link_to t("paths.order_info"), "#collapseOrderInfo", class: "col btn btn-primary ml-3",
@@ -12,16 +12,16 @@
 .collapse.mt-3 id="collapseOrderInfo"
   .container
     .row
-      .form-inline.col-sm
+      .col
         = form_tag order_info_path, method: :get,
                                     remote: true,
                                     :"data-type" => :html,
                                     id: "search_order",
-                                    class: "form-inline" do |f|
+                                    class: "input-group" do |f|
           = text_field_tag :search,
                           params[:search],
                           placeholder: t("front/home.search_order"),
-                          class: "form-control me-2"
+                          class: "form-control mr-1"
           = submit_tag t("cocoon.defaults.search"),
                         :name => nil,
                         class: "btn btn-outline-success"
@@ -29,6 +29,7 @@
       .col
         .card-footer-text-muted.mt-3 id="order-report-results"
 .container.mt-3
+  h4.lead.display-4 = t("front/home.news_on_main")
   - @news.each do |news_item|
     .card.card-body
       h5.card-title = news_item.title
