@@ -24,10 +24,11 @@ module Admin
     end
 
     def orders_accepted_by_master_options
-      Order.group(:master).count.each_with_object([]) do |element, memo|
+      Order.joins(:master).group(:"admin_masters.id")
+        .count.each_with_object([]) do |element, memo|
         next unless element.first.present?
 
-        memo << [element.first.full_name, element.last]
+        memo << [Master.find(element.first).full_name, element.last]
       end
     end
 

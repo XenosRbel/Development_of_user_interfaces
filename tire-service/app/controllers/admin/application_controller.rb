@@ -16,7 +16,7 @@ module Admin
     layout "admin"
 
     rescue_from CanCan::AccessDenied do |exception|
-      if current_user
+      if current_administrator
         redirect_to root_path
       else
         flash[:error] = exception.message

@@ -62,7 +62,7 @@ end
 
 def self.create_admin_news
   Admin::News.create(
-    created_at: FFaker::Random.rand(1..24).months.from_now,
+    created_at: FFaker::Random.rand(1..24).months.ago,
     title: FFaker::Book.title,
     content: FFaker::Lorem.sentences(10).join(" ").html_safe
   )
