@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-# This file is used by Rack-based servers to start the application.
+require ::File.expand_path("../config/environment", __FILE__)
+require "yabeda/prometheus/mmap"
 
-require_relative "config/environment"
+use Yabeda::Prometheus::Exporter if Boolean(ENV.fetch("YABEDA_METRICS_ENABLED"))
 
 run Rails.application
