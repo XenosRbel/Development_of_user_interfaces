@@ -1,38 +1,43 @@
 - unless @orders.present?
   .alert.alert-danger
     span = t("front/home.not_found_data")
+- else
+  = link_to I18n.t('cocoon.defaults.download_from_pdf'),
+            cdn.orders_path(format: :pdf, orders_ids: @orders.map(&:id)),
+            method: :get,
+            class: "btn btn-warning mb-3"
 
--@orders.each do | order |
-  .mb-3
-    .card.text-center
-      .card-body
-        h5.card-title
-          span = I18n.t("activerecord.attributes.admin/order.id")
-          |&nbsp;
-          span = order.id
-      ul.list-group.list-group-flush
-        li.list-group-item
-          span = I18n.t("activerecord.attributes.admin/order.start_execution_at")
-          |:&nbsp;
-          span = order.start_execution_at      
-        li.list-group-item
-          span = I18n.t("activerecord.attributes.admin/order.end_execution_at")
-          |:&nbsp;
-          span = order.end_execution_at
-        li.list-group-item
-          span = I18n.t("activerecord.attributes.admin/order.master")
-          |:&nbsp;
-          span = order.master.full_name
-        li.list-group-item
-          span = I18n.t("activerecord.attributes.admin/order.services")
-          |:&nbsp;
-          - order.services.each do |service|
-              p = service.title 
-        li.list-group-item
-          span = I18n.t("activerecord.attributes.admin/order.total_sum")
-          |:&nbsp;
-          span = order.total_sum
-        li.list-group-item
-          span = I18n.t("activerecord.attributes.admin/order.total_sum_with_discount")
-          |:&nbsp;
-          span = order.total_sum_with_discount
+  -@orders.each do | order |
+    .mb-3
+      .card.text-center
+        .card-body
+          h5.card-title
+            span = I18n.t("activerecord.attributes.admin/order.id")
+            |&nbsp;
+            span = order.id
+        ul.list-group.list-group-flush
+          li.list-group-item
+            span = I18n.t("activerecord.attributes.admin/order.start_execution_at")
+            |:&nbsp;
+            span = order.start_execution_at      
+          li.list-group-item
+            span = I18n.t("activerecord.attributes.admin/order.end_execution_at")
+            |:&nbsp;
+            span = order.end_execution_at
+          li.list-group-item
+            span = I18n.t("activerecord.attributes.admin/order.master")
+            |:&nbsp;
+            span = order.master.full_name
+          li.list-group-item
+            span = I18n.t("activerecord.attributes.admin/order.services")
+            |:&nbsp;
+            - order.services.each do |service|
+                p = service.title 
+          li.list-group-item
+            span = I18n.t("activerecord.attributes.admin/order.total_sum")
+            |:&nbsp;
+            span = order.total_sum
+          li.list-group-item
+            span = I18n.t("activerecord.attributes.admin/order.total_sum_with_discount")
+            |:&nbsp;
+            span = order.total_sum_with_discount

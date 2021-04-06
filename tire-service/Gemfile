@@ -77,6 +77,11 @@ gem "json-schema"
 gem "nokogiri"
 gem "fast_excel"
 
+# Reports
+gem "wicked_pdf"
+# gem "wkhtmltopdf-binary"
+gem "wkhtmltopdf-binary-edge", "~> 0.12.6.0"
+
 # API documentation
 gem "rswag-api", "~> 2.2.0"
 gem "rswag-ui", "~> 2.2.0"

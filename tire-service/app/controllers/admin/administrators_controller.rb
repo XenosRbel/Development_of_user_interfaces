@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class AdministratorsController < ApplicationController
+  class AdministratorsController < Admin::ApplicationController
     include Admin::Datatable
 
     load_and_authorize_resource
@@ -23,6 +23,10 @@ module Admin
                              email
                              role].freeze
     MODEL_PARAMS = UPDATE_MODEL_PARAMS
+
+    def show
+      respond_html_json_and_pdf_for(@administrator)
+    end
 
     def create
       @administrator = model.create(model_params)

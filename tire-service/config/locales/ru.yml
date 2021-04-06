@@ -110,6 +110,7 @@ ru:
       show: "Просмотреть"
       exit: "Выйти"
       search: "Поиск"
+      download_from_pdf: "Скачать в PDF"
   date:
     order:
       start_date_at: "Действует с"
@@ -122,6 +123,16 @@ ru:
     сustomer_growth_statistics: "Статистика роста клиентов"
     orders_accepted_by_master: "Принятые заказы мастером"
     increase_orders_per_day_of_week: "Увеличение заказов за неделю"
+    pdf_report_title: "Отчет %{entity_title} от %{report_at}"
+    orders/pdf:
+      order_number: "Заказ № %{order_id}"
+      organization_title: "Tire-Services"
+      vat: "НДС: %{amount} %"
+      discount: "Скидка: %{percent} %"
+      total: "Итого к оплате %{amount} (BYN)"
+      check_created_at: "Дата создания чека %{datetime}"
+      service_title: "Название услуги: %{title}"
+      service_price: "Цена: %{price}"
   front/home:
     site_name: "Автосервис на RoR"
     news_on_main: "Новости на главной"

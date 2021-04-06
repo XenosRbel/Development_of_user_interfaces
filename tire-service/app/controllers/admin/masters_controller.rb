@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class MastersController < ApplicationController
+  class MastersController < Admin::ApplicationController
     include Admin::Datatable
 
     load_and_authorize_resource

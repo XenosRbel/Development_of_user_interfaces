@@ -2,6 +2,8 @@
 
 module Front
   class HomeController < ApplicationController
+    include ::RespondHelper
+
     layout "front"
 
     before_action :home_params, only: %i[index]
@@ -9,10 +11,7 @@ module Front
     def order_info
       @orders = search_by_params(params[:search])
 
-      respond_to do |format|
-        format.html { render partial: "order_info" }
-        format.js { render json: @orders }
-      end
+      respond_html_json_and_pdf_for(@orders, template: { partial: "order_info" })
     end
 
     private
@@ -34,7 +33,8 @@ module Front
     end
 
     def search_by_phone_number(value)
-      return Admin::Customer.where(phone_number: value).take.orders.find_not_finished if valid_phone_number?(value)
+      customer = Admin::Customer.where(phone_number: value).take
+      return customer.orders.find_not_finished if valid_phone_number?(value) && customer.present?
     end
 
     def home_params

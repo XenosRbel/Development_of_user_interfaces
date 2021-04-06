@@ -2,6 +2,8 @@
 
 module Admin
   module RespondHelper
+    include ::RespondHelper
+
     def respond_html_and_datatable_json_for(model, options = {})
       template = options.delete :template
       respond_to do |format|

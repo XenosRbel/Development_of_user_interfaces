@@ -383,6 +383,9 @@ GEM
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wicked_pdf (2.1.0)
+      activesupport
+    wkhtmltopdf-binary-edge (0.12.6.0)
     yabeda (0.8.0)
       concurrent-ruby
       dry-initializer
@@ -475,6 +478,8 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webmock (~> 3.5, >= 3.5.1)
   webpacker (~> 6.x)
+  wicked_pdf
+  wkhtmltopdf-binary-edge (~> 0.12.6.0)
   yabeda (~> 0.8.0)
   yabeda-prometheus-mmap (~> 0.1.1)
   yabeda-puma-plugin (~> 0.4.0)

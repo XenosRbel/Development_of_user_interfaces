@@ -2,6 +2,7 @@
 
 module ApplicationHelper
   include Chartkick::Helper
+  include ::FormatterHelper
 
   def path_for(model)
     public_send("#{model.class.name.split('::').last.downcase}_path", model)
@@ -24,5 +25,9 @@ module ApplicationHelper
 
   def title
     I18n.t("actions.#{params[:controller]}")
+  end
+
+  def read_constant(constant_name)
+    self.class.const_get(constant_name)
   end
 end

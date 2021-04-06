@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   mount Admin::Engine, at: "/admin"
   mount Api::Engine, at: "/api"
   mount Front::Engine, at: "/"
+  mount Cdn::Engine, at: "/cdn"
 end

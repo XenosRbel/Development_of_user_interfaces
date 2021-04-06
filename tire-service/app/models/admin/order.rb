@@ -26,8 +26,14 @@ module Admin
       services.sum(:price)
     end
 
+    def discount_amount
+      percent = discount.nil? ? 0 : discount.percent
+      (total_sum * percent / 100).round(2)
+    end
+
     def total_sum_with_discount
-      (total_sum - (total_sum * discount.percent / 100)).round(2)
+      percent = discount.nil? ? 0 : discount.percent
+      (total_sum - (total_sum * percent / 100)).round(2)
     end
   end
 end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class DiscountsController < ApplicationController
+  class DiscountsController < Admin::ApplicationController
     include Admin::Datatable
 
     load_and_authorize_resource
