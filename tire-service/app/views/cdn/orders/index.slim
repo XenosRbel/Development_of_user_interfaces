@@ -1,7 +1,7 @@
 -translate_scope = "reports.orders/pdf"
 
 .container.container-sm
-  h3.display-3 = t("organization_title", scope: translate_scope)
+  h3.display-3 = setting.title
   -@orders.each do | order |
     - percent = order.discount.nil? ? 0 : order.discount.percent
     .card.text-left.mb-3
@@ -17,7 +17,7 @@
                                           title: service.title,
                                           scope: translate_scope)
                   p.col.text-right = t("vat",
-                                        amount: 20,
+                                        amount: setting.vat,
                                         scope: translate_scope)
                   .col.text-right = t("service_price",
                                           price: service.price,
@@ -42,16 +42,17 @@
             |:&nbsp;
             span = order.master.full_name
           li.list-group-item.text-center
-            span = I18n.t("activerecord.attributes.admin/order.total_sum")
+            span = I18n.t("activerecord.attributes.admin/order.total_sum", currency: setting.currency)
             |:&nbsp;
             span = order.total_sum
           li.list-group-item.text-center
-            span = I18n.t("activerecord.attributes.admin/order.total_sum_with_discount")
+            span = I18n.t("activerecord.attributes.admin/order.total_sum_with_discount", currency: setting.currency)
             |:&nbsp;
             span = order.total_sum_with_discount
   .text-right.mt-1
     h5.display-5-mt-3 = t("total",
                         amount: @orders.map(&:total_sum_with_discount).sum,
+                        currency: setting.currency,
                         scope: translate_scope)
     h5.display-5-mt-1 = t("check_created_at",
                         datetime: Time.now.strftime(read_constant(:DATETIME_FORMAT)),
