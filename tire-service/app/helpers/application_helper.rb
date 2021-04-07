@@ -30,4 +30,8 @@ module ApplicationHelper
   def read_constant(constant_name)
     self.class.const_get(constant_name)
   end
+
+  def setting
+    @setting ||= ::Setting
+  end
 end

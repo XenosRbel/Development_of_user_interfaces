@@ -44,8 +44,8 @@ ru:
         master: "Мастер"
         discount: "Дискоунт"
         services: "Услуги"
-        total_sum: "Сумма (BYN) заказа"
-        total_sum_with_discount: "Сумма (BYN) с учетом скидки"
+        total_sum: "Сумма (%{currency}) заказа"
+        total_sum_with_discount: "Сумма (%{currency}) с учетом скидки"
       admin/news:
         <<: *base_attributes
         content: "Содержание"
@@ -59,7 +59,7 @@ ru:
         end_date_at: "Действует до"
       admin/service:
         <<: *base_attributes
-        price: "Цена (BYN)"
+        price: "Цена"
         description: "Описание"
         title: "Заголовок"
       admin/master:
@@ -89,6 +89,7 @@ ru:
     administrators: "Администраторы"
     news: "Новости"
     order_info: "Информация о заказе"
+    settings: "Настройки"
   actions:
     admin/home: "Главная"
     admin/orders: "Заказы"
@@ -99,6 +100,7 @@ ru:
     admin/customers: "Заказчики"
     admin/administrators: "Администраторы"
     admin/news: "Новости"
+    admin/settings: "Настройки"
   roles:
     admin: "Администратор"
   cocoon:
@@ -129,7 +131,7 @@ ru:
       organization_title: "Tire-Services"
       vat: "НДС: %{amount} %"
       discount: "Скидка: %{percent} %"
-      total: "Итого к оплате %{amount} (BYN)"
+      total: "Итого к оплате %{amount} (%{currency})"
       check_created_at: "Дата создания чека %{datetime}"
       service_title: "Название услуги: %{title}"
       service_price: "Цена: %{price}"
