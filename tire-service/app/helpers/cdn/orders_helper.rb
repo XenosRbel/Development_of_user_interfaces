@@ -1,2 +1,0 @@
-module Cdn::OrdersHelper
-end

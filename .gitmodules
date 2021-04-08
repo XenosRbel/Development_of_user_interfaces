@@ -1,0 +1,3 @@
+[submodule "tire-service"]
+	path = tire-service
+	url = git@github.com:XenosRbel/Rails-Tire-Service.git

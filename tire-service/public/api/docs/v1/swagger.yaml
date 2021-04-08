@@ -1,6 +1,0 @@
----
-openapi: 3.0.1
-info:
-  title: Tire service API V1
-  version: v1
-paths: {}

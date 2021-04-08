@@ -1,9 +1,0 @@
-= simple_form_for @service do |f|
-  .row
-    .medium-4.columns
-      = f.input :title
-      = f.input :description, as: :text
-      = f.input :price
-  .row
-    .medium-12.columns.form__buttons
-      = f.button :submit, t("simple_form.submit"), class: "button tiny submit-button mt-3"
